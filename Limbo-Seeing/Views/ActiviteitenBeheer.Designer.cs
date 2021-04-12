@@ -70,6 +70,7 @@ namespace Limbo_Seeing.Views
             this.Btn_Add.TabIndex = 0;
             this.Btn_Add.Text = "Add";
             this.Btn_Add.UseVisualStyleBackColor = true;
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Btn_Delete
             // 
@@ -79,6 +80,7 @@ namespace Limbo_Seeing.Views
             this.Btn_Delete.TabIndex = 1;
             this.Btn_Delete.Text = "Delete";
             this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // Btn_Update
             // 
@@ -88,6 +90,7 @@ namespace Limbo_Seeing.Views
             this.Btn_Update.TabIndex = 2;
             this.Btn_Update.Text = "Update";
             this.Btn_Update.UseVisualStyleBackColor = true;
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
             // 
             // Btn_Cancel
             // 
@@ -126,7 +129,7 @@ namespace Limbo_Seeing.Views
             this.ActiviteitenDataView.RowTemplate.Height = 24;
             this.ActiviteitenDataView.Size = new System.Drawing.Size(457, 400);
             this.ActiviteitenDataView.TabIndex = 12;
-            this.ActiviteitenDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ActiviteitenDataView_CellContentClick_1);
+            this.ActiviteitenDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ActiviteitenDataView_CellContentClick);
             // 
             // Id
             // 
@@ -308,7 +311,6 @@ namespace Limbo_Seeing.Views
             this.EindTime.Size = new System.Drawing.Size(200, 22);
             this.EindTime.TabIndex = 27;
             this.EindTime.Value = new System.DateTime(2021, 4, 12, 22, 0, 41, 0);
-            this.EindTime.ValueChanged += new System.EventHandler(this.EindTime_ValueChanged);
             // 
             // Activtieten_guid
             // 
