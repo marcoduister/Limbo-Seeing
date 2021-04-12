@@ -32,6 +32,8 @@ namespace Limbo_Seeing.Views
             this.label1 = new System.Windows.Forms.Label();
             this.btn_uitloggen = new System.Windows.Forms.Button();
             this.btn_Account = new System.Windows.Forms.Button();
+            this.btn_Activiteiten = new System.Windows.Forms.Button();
+            this.btn_Mijn_Reseveringen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -66,11 +68,34 @@ namespace Limbo_Seeing.Views
             this.btn_Account.UseVisualStyleBackColor = true;
             this.btn_Account.Click += new System.EventHandler(this.btn_Account_Click);
             // 
+            // btn_Activiteiten
+            // 
+            this.btn_Activiteiten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Activiteiten.Location = new System.Drawing.Point(598, 13);
+            this.btn_Activiteiten.Name = "btn_Activiteiten";
+            this.btn_Activiteiten.Size = new System.Drawing.Size(190, 33);
+            this.btn_Activiteiten.TabIndex = 7;
+            this.btn_Activiteiten.Text = "Activiteiten";
+            this.btn_Activiteiten.UseVisualStyleBackColor = true;
+            this.btn_Activiteiten.Click += new System.EventHandler(this.btn_Activiteiten_Click);
+            // 
+            // btn_Mijn_Reseveringen
+            // 
+            this.btn_Mijn_Reseveringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Mijn_Reseveringen.Location = new System.Drawing.Point(598, 52);
+            this.btn_Mijn_Reseveringen.Name = "btn_Mijn_Reseveringen";
+            this.btn_Mijn_Reseveringen.Size = new System.Drawing.Size(190, 33);
+            this.btn_Mijn_Reseveringen.TabIndex = 8;
+            this.btn_Mijn_Reseveringen.Text = "Mijn Reseveringen";
+            this.btn_Mijn_Reseveringen.UseVisualStyleBackColor = true;
+            // 
             // MainBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Mijn_Reseveringen);
+            this.Controls.Add(this.btn_Activiteiten);
             this.Controls.Add(this.btn_Account);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_uitloggen);
@@ -85,5 +110,7 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_uitloggen;
         private System.Windows.Forms.Button btn_Account;
+        private System.Windows.Forms.Button btn_Activiteiten;
+        private System.Windows.Forms.Button btn_Mijn_Reseveringen;
     }
 }

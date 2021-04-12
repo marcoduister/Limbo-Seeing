@@ -73,6 +73,7 @@ namespace Limbo_Seeing.Views
             this.StartBase_tabControl.SelectedIndex = 0;
             this.StartBase_tabControl.Size = new System.Drawing.Size(44814, 25100);
             this.StartBase_tabControl.TabIndex = 7;
+            this.StartBase_tabControl.SelectedIndexChanged += new System.EventHandler(this.StartBase_tabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
