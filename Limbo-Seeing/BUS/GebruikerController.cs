@@ -82,13 +82,11 @@ namespace Limbo_Seeing.BUS
                         {
                             return "Wachtwoord moet minimaal 1 Hooftletter bevaten";
                         }
-
                     }
                     else
                     {
                         return "Wachtwoord is niet lang genoeg";
                     }
-
                 }
                 else
                 {
