@@ -65,21 +65,23 @@ namespace Limbo_Seeing.Views
             this.StartBase_tabControl.Controls.Add(this.tabPage1);
             this.StartBase_tabControl.Controls.Add(this.tabPage2);
             this.StartBase_tabControl.Controls.Add(this.tabPage3);
-            this.StartBase_tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartBase_tabControl.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.StartBase_tabControl.ItemSize = new System.Drawing.Size(70, 40);
             this.StartBase_tabControl.Location = new System.Drawing.Point(-3, 2);
+            this.StartBase_tabControl.Multiline = true;
             this.StartBase_tabControl.Name = "StartBase_tabControl";
             this.StartBase_tabControl.SelectedIndex = 0;
-            this.StartBase_tabControl.Size = new System.Drawing.Size(807, 452);
+            this.StartBase_tabControl.Size = new System.Drawing.Size(44814, 25100);
             this.StartBase_tabControl.TabIndex = 7;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(799, 419);
+            this.tabPage1.Size = new System.Drawing.Size(44806, 25052);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             // 
@@ -89,7 +91,7 @@ namespace Limbo_Seeing.Views
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(27, 40);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(295, 25);
+            this.label10.Size = new System.Drawing.Size(241, 25);
             this.label10.TabIndex = 0;
             this.label10.Text = "Welkom bij Limbo - seeing";
             // 
@@ -101,10 +103,11 @@ namespace Limbo_Seeing.Views
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.btn_login);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(799, 419);
+            this.tabPage2.Size = new System.Drawing.Size(44806, 25052);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Login";
             // 
@@ -120,7 +123,7 @@ namespace Limbo_Seeing.Views
             // Email_Textbox
             // 
             this.Email_Textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_Textbox.Location = new System.Drawing.Point(331, 73);
+            this.Email_Textbox.Location = new System.Drawing.Point(414, 91);
             this.Email_Textbox.Name = "Email_Textbox";
             this.Email_Textbox.Size = new System.Drawing.Size(252, 27);
             this.Email_Textbox.TabIndex = 10;
@@ -128,28 +131,29 @@ namespace Limbo_Seeing.Views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label2.Location = new System.Drawing.Point(206, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 32);
+            this.label2.Size = new System.Drawing.Size(195, 44);
             this.label2.TabIndex = 9;
             this.label2.Text = "Wachtwoord";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label1.Location = new System.Drawing.Point(206, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 32);
+            this.label1.Size = new System.Drawing.Size(94, 44);
             this.label1.TabIndex = 8;
             this.label1.Text = "Email";
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(470, 223);
+            this.btn_login.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.btn_login.Location = new System.Drawing.Point(588, 279);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(113, 48);
+            this.btn_login.Size = new System.Drawing.Size(141, 60);
             this.btn_login.TabIndex = 7;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -173,10 +177,10 @@ namespace Limbo_Seeing.Views
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.Reg_Achternaam_textBox);
             this.tabPage3.Controls.Add(this.Reg_Voornaam_textBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 44);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(799, 419);
+            this.tabPage3.Size = new System.Drawing.Size(44806, 25052);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "registratie";
             // 
@@ -327,7 +331,7 @@ namespace Limbo_Seeing.Views
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(640, 360);
             this.Controls.Add(this.StartBase_tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StartBase";
