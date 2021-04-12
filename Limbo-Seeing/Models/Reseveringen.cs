@@ -18,6 +18,6 @@ namespace Limbo_Seeing.Models
         public virtual Gebruiker Gebruiker { get; set; }
 
         public Guid Activiteit_Id { get; set; }
-        public virtual Activiteiten Activiteit { get; set; }
+        public virtual Activiteit Activiteit { get; set; }
     }
 }

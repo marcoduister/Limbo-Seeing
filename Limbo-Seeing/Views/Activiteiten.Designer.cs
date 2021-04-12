@@ -51,12 +51,12 @@ namespace Limbo_Seeing.Views
             this.Start_tijd,
             this.Eind_tijd,
             this.Reseveren});
-            this.ActiviteitenDataView.Enabled = false;
             this.ActiviteitenDataView.Location = new System.Drawing.Point(12, 89);
             this.ActiviteitenDataView.Name = "ActiviteitenDataView";
+            this.ActiviteitenDataView.ReadOnly = true;
             this.ActiviteitenDataView.RowHeadersWidth = 51;
             this.ActiviteitenDataView.RowTemplate.Height = 24;
-            this.ActiviteitenDataView.Size = new System.Drawing.Size(776, 349);
+            this.ActiviteitenDataView.Size = new System.Drawing.Size(902, 349);
             this.ActiviteitenDataView.TabIndex = 1;
             this.ActiviteitenDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ActiviteitenDataView_CellContentClick);
             // 
@@ -120,7 +120,7 @@ namespace Limbo_Seeing.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(926, 450);
             this.Controls.Add(this.ActiviteitenDataView);
             this.Name = "Activiteiten";
             this.Text = "Activiteiten";

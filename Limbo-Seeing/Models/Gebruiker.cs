@@ -31,6 +31,6 @@ namespace Limbo_Seeing.Models
         public DateTime CreatedOn { get; set; }
 
         public virtual ICollection<Resevering> Reseverings { get; set; }
-        public virtual ICollection<Activiteiten> Activiteitens { get; set; }
+        public virtual ICollection<Activiteit> Activiteitens { get; set; }
     }
 }

@@ -12,9 +12,13 @@ namespace Limbo_Seeing.BUS
     {
         Limbo_SeeingContext DBContext = new Limbo_SeeingContext();
 
-        public ICollection<Activiteiten> GetActiviteitens()
+        public ICollection<Activiteit> GetActiviteitens()
         {
             return DBContext.Activiteiten.ToList();
+        }
+        public Activiteit GetActiviteitbyGuid(Guid Id)
+        {
+            return DBContext.Activiteiten.First(F => F.Id == Id);
         }
     }
 }

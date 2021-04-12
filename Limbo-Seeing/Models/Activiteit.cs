@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Limbo_Seeing.Models
 {
-    class Activiteiten
+    class Activiteit
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }

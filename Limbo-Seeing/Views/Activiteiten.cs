@@ -22,7 +22,14 @@ namespace Limbo_Seeing.Views
 
         private void ActiviteitenDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Guid Activiteit_id = Guid.Parse(ActiviteitenDataView.Rows[e.RowIndex].Cells[0].Value.ToString());
 
+            if (ActiviteitenDataView.Columns[e.ColumnIndex].Name == "Reseveren")
+            {
+                // display on the new form.
+                Reseveren Reseverenform = new Reseveren(Activiteit_id);
+                Reseverenform.ShowDialog();
+            }
         }
 
         private void Activiteiten_Load(object sender, EventArgs e)

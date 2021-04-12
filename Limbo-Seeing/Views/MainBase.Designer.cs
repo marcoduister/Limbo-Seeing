@@ -88,6 +88,7 @@ namespace Limbo_Seeing.Views
             this.btn_Mijn_Reseveringen.TabIndex = 8;
             this.btn_Mijn_Reseveringen.Text = "Mijn Reseveringen";
             this.btn_Mijn_Reseveringen.UseVisualStyleBackColor = true;
+            this.btn_Mijn_Reseveringen.Click += new System.EventHandler(this.btn_Mijn_Reseveringen_Click);
             // 
             // MainBase
             // 

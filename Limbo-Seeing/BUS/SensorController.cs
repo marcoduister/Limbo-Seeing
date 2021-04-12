@@ -10,5 +10,6 @@ namespace Limbo_Seeing.BUS
 {
     class SensorController
     {
+        Limbo_SeeingContext DBContext = new Limbo_SeeingContext();
     }
 }
