@@ -71,6 +71,7 @@ namespace Limbo_Seeing.Views
             this.StartBase_tabControl.SelectedIndex = 0;
             this.StartBase_tabControl.Size = new System.Drawing.Size(807, 452);
             this.StartBase_tabControl.TabIndex = 7;
+            this.StartBase_tabControl.SelectedIndexChanged += new System.EventHandler(this.StartBase_tabControl_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -89,7 +90,7 @@ namespace Limbo_Seeing.Views
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(27, 40);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(295, 25);
+            this.label10.Size = new System.Drawing.Size(241, 25);
             this.label10.TabIndex = 0;
             this.label10.Text = "Welkom bij Limbo - seeing";
             // 

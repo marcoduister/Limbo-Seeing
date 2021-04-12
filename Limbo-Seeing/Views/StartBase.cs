@@ -58,5 +58,10 @@ namespace Limbo_Seeing.Views
                 MessageBox.Show("controleer je gegevens nog eens!!");
             }
         }
+
+        private void StartBase_tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
