@@ -15,6 +15,7 @@ namespace Limbo_Seeing.Views
     public partial class ActiviteitenBeheer : Form
     {
         ActiviteitenController _Controller = new ActiviteitenController();
+        ReseveringController _ReseveringController = new ReseveringController();
 
         public ActiviteitenBeheer()
         {
@@ -41,6 +42,7 @@ namespace Limbo_Seeing.Views
             StartTime.Value = DateTime.Now;
             EindTime.Value = DateTime.Now;
             ActiviteitenDataView.Rows.Clear();
+            dataGridView_gebruikers.Rows.Clear();
 
             foreach (var Activiteit in _Controller.GetAllActiviteitenByUserID())
             {
@@ -75,6 +77,21 @@ namespace Limbo_Seeing.Views
             Activiteit_Datum_DateTimePicker.Value = activiteit.Start_Activiteit;
             StartTime.Value = activiteit.Start_Activiteit;
             EindTime.Value = activiteit.Eind_Activiteit;
+
+            dataGridView_gebruikers.Rows.Clear();
+
+            foreach (var Resevering in activiteit.Reseverings)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dataGridView_gebruikers);
+                row.Cells[0].Value = Resevering.Id;
+                row.Cells[1].Value = Resevering.Gebruiker.Voornaam;
+                row.Cells[2].Value = Resevering.Gebruiker.Achternaam;
+                row.Cells[3].Value = Resevering.Tijdslot_Start;
+                DataGridViewButtonCell btn_verwijder = new DataGridViewButtonCell() { Value = "Verwijder" };
+                row.Cells[4] = btn_verwijder;
+                dataGridView_gebruikers.Rows.Add(row);
+            }
         }
 
         private void Btn_Delete_Click(object sender, EventArgs e)
@@ -151,6 +168,28 @@ namespace Limbo_Seeing.Views
                 Eind_Activiteit = Eindactivteit
             };
             return activteit;
+        }
+
+        private void dataGridView_gebruikers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Guid Resevering_id = Guid.Parse(dataGridView_gebruikers.Rows[e.RowIndex].Cells[0].Value.ToString());
+            if (dataGridView_gebruikers.Columns[e.ColumnIndex].Name == "Verwijder")
+            {
+                if (_ReseveringController.Delete(Resevering_id))
+                {
+                    MessageBox.Show("uw heeft zo juist een Resevering verwijderd");
+                    dataGridView_gebruikers.Rows.RemoveAt(e.RowIndex);
+                }
+                else
+                {
+                    MessageBox.Show("er is iets fout gegaan probeer het later nog eens opnieuw");
+                }
+            }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            loader();
         }
     }
 }

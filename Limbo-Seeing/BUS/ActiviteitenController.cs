@@ -24,7 +24,7 @@ namespace Limbo_Seeing.BUS
         }
         public Activiteit GetActiviteitbyGuid(Guid Id)
         {
-            return DBContext.Activiteiten.Include(e =>e.Reseverings).AsNoTracking().First(F => F.Id == Id);
+            return DBContext.Activiteiten.AsNoTracking().Include(e =>e.Reseverings).ThenInclude(e=>e.Gebruiker).AsNoTracking().First(F => F.Id == Id);
         }
         public bool Create(Activiteit activiteit)
         {
@@ -45,7 +45,7 @@ namespace Limbo_Seeing.BUS
 
         public bool Delete(Guid Activtieten_id)
         {
-            Activiteit activiteit = DBContext.Activiteiten.Include(e => e.Reseverings).First(e => e.Id == Activtieten_id);
+            Activiteit activiteit = DBContext.Activiteiten.AsNoTracking().Include(e => e.Reseverings).First(e => e.Id == Activtieten_id);
             DBContext.Activiteiten.Remove(activiteit);
             DBContext.SaveChanges();
             return true;

@@ -57,9 +57,17 @@ namespace Limbo_Seeing.Views
             this.StartTime = new System.Windows.Forms.DateTimePicker();
             this.EindTime = new System.Windows.Forms.DateTimePicker();
             this.Activtieten_guid = new System.Windows.Forms.TextBox();
+            this.dataGridView_gebruikers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Voornaam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Achternaam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartTijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Verwijder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ActiviteitenDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Aantal_Num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tijdslot_grote_Num)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gebruikers)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Add
@@ -94,11 +102,11 @@ namespace Limbo_Seeing.Views
             // 
             // Btn_Cancel
             // 
-            this.Btn_Cancel.Location = new System.Drawing.Point(300, 364);
+            this.Btn_Cancel.Location = new System.Drawing.Point(380, 364);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(71, 48);
             this.Btn_Cancel.TabIndex = 3;
-            this.Btn_Cancel.Text = "Cancel";
+            this.Btn_Cancel.Text = "Terug";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
@@ -122,12 +130,12 @@ namespace Limbo_Seeing.Views
             this.Tijd_Slots,
             this.Start_tijd,
             this.Eind_tijd});
-            this.ActiviteitenDataView.Location = new System.Drawing.Point(393, 12);
+            this.ActiviteitenDataView.Location = new System.Drawing.Point(470, 12);
             this.ActiviteitenDataView.Name = "ActiviteitenDataView";
             this.ActiviteitenDataView.ReadOnly = true;
             this.ActiviteitenDataView.RowHeadersWidth = 51;
             this.ActiviteitenDataView.RowTemplate.Height = 24;
-            this.ActiviteitenDataView.Size = new System.Drawing.Size(457, 400);
+            this.ActiviteitenDataView.Size = new System.Drawing.Size(457, 205);
             this.ActiviteitenDataView.TabIndex = 12;
             this.ActiviteitenDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ActiviteitenDataView_CellContentClick);
             // 
@@ -314,17 +322,91 @@ namespace Limbo_Seeing.Views
             // 
             // Activtieten_guid
             // 
-            this.Activtieten_guid.Location = new System.Drawing.Point(750, 421);
+            this.Activtieten_guid.Location = new System.Drawing.Point(284, 419);
             this.Activtieten_guid.Name = "Activtieten_guid";
             this.Activtieten_guid.Size = new System.Drawing.Size(100, 22);
             this.Activtieten_guid.TabIndex = 28;
             this.Activtieten_guid.Visible = false;
             // 
+            // dataGridView_gebruikers
+            // 
+            this.dataGridView_gebruikers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_gebruikers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.Voornaam,
+            this.Achternaam,
+            this.StartTijd,
+            this.Verwijder});
+            this.dataGridView_gebruikers.Location = new System.Drawing.Point(470, 242);
+            this.dataGridView_gebruikers.Name = "dataGridView_gebruikers";
+            this.dataGridView_gebruikers.ReadOnly = true;
+            this.dataGridView_gebruikers.RowHeadersWidth = 51;
+            this.dataGridView_gebruikers.RowTemplate.Height = 24;
+            this.dataGridView_gebruikers.Size = new System.Drawing.Size(457, 179);
+            this.dataGridView_gebruikers.TabIndex = 29;
+            this.dataGridView_gebruikers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_gebruikers_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // Voornaam
+            // 
+            this.Voornaam.HeaderText = "Voornaam";
+            this.Voornaam.MinimumWidth = 6;
+            this.Voornaam.Name = "Voornaam";
+            this.Voornaam.ReadOnly = true;
+            this.Voornaam.Width = 125;
+            // 
+            // Achternaam
+            // 
+            this.Achternaam.HeaderText = "Achternaam";
+            this.Achternaam.MinimumWidth = 6;
+            this.Achternaam.Name = "Achternaam";
+            this.Achternaam.ReadOnly = true;
+            this.Achternaam.Width = 125;
+            // 
+            // StartTijd
+            // 
+            this.StartTijd.HeaderText = "StartTijd";
+            this.StartTijd.MinimumWidth = 6;
+            this.StartTijd.Name = "StartTijd";
+            this.StartTijd.ReadOnly = true;
+            this.StartTijd.Width = 125;
+            // 
+            // Verwijder
+            // 
+            this.Verwijder.HeaderText = "Verwijder";
+            this.Verwijder.MinimumWidth = 6;
+            this.Verwijder.Name = "Verwijder";
+            this.Verwijder.ReadOnly = true;
+            this.Verwijder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Verwijder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Verwijder.Width = 125;
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Location = new System.Drawing.Point(297, 365);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(71, 48);
+            this.btn_clear.TabIndex = 30;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
+            // 
             // ActiviteitenBeheer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 450);
+            this.ClientSize = new System.Drawing.Size(939, 450);
+            this.Controls.Add(this.btn_clear);
+            this.Controls.Add(this.dataGridView_gebruikers);
             this.Controls.Add(this.Activtieten_guid);
             this.Controls.Add(this.EindTime);
             this.Controls.Add(this.StartTime);
@@ -352,6 +434,7 @@ namespace Limbo_Seeing.Views
             ((System.ComponentModel.ISupportInitialize)(this.ActiviteitenDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Aantal_Num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tijdslot_grote_Num)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gebruikers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +470,12 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.DateTimePicker StartTime;
         private System.Windows.Forms.DateTimePicker EindTime;
         private System.Windows.Forms.TextBox Activtieten_guid;
+        private System.Windows.Forms.DataGridView dataGridView_gebruikers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Voornaam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Achternaam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartTijd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Verwijder;
+        private System.Windows.Forms.Button btn_clear;
     }
 }
