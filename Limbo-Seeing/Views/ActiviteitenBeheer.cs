@@ -79,7 +79,7 @@ namespace Limbo_Seeing.Views
 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-            if (Activtieten_guid.Text != null)
+            if (Activtieten_guid.Text != "")
             {
                 _Controller.Delete(new Guid(Activtieten_guid.Text));
                 loader();
@@ -92,29 +92,40 @@ namespace Limbo_Seeing.Views
 
         private void Btn_Update_Click(object sender, EventArgs e)
         {
-            if (_Controller.update(ModelConverter()))
+            if (Activtieten_guid.Text != "")
             {
-                MessageBox.Show("Uw heeft zo juist een activteit geupdate!");
-                loader();
+                if (_Controller.update(ModelConverter()))
+                {
+                    MessageBox.Show("Uw heeft zo juist een activteit geupdate!");
+                    loader();
+                }
+                else
+                {
+                    MessageBox.Show("Er is iets fout gegaan probeer het nu of later opnieuw!!");
+                }
             }
             else
             {
-                MessageBox.Show("Er is iets fout gegaan probeer het nu of later opnieuw!!");
+                MessageBox.Show("selecteer eerst een Activiteit voor je hem probeert te update!!");
             }
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            if (_Controller.Create(ModelConverter()))
+            if (Controls.OfType<TextBox>().Any(tb => tb.Text.Length != 0))
             {
-                MessageBox.Show("Uw heeft zo juist een nieuwe Activteit aan gemaakt!");
-                loader();
+                if (_Controller.Create(ModelConverter()))
+                {
+                    MessageBox.Show("Uw heeft zo juist een nieuwe Activteit aan gemaakt!");
+                    loader();
 
+                }
+                else
+                {
+                    MessageBox.Show("Er is iets fout gegaan probeer het nu of later opnieuw!!");
+                }
             }
-            else 
-            {
-                MessageBox.Show("Er is iets fout gegaan probeer het nu of later opnieuw!!");
-            }
+            else { MessageBox.Show("Uw moet eerst alle velden invullen voor uw iets kan Toevoegen!!"); }
         }
 
         private Activiteit ModelConverter()

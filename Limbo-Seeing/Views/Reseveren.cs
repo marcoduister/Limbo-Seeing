@@ -30,8 +30,19 @@ namespace Limbo_Seeing.Views
             var item = activiteit.Start_Activiteit;
             while (item <= activiteit.Eind_Activiteit)
             {
-                CBox_tijdslots.Items.Add(item.TimeOfDay.ToString(@"hh\:mm"));
-                item = item.AddMinutes(activiteit.Tijdslot_grote);
+                if (activiteit.Eind_Activiteit == item )
+                {
+                    if (activiteit.Tijdslot_grote >= 0)
+                    {
+                        CBox_tijdslots.Items.Add(item.TimeOfDay.ToString(@"hh\:mm"));
+                        item = item.AddMinutes(30);
+                    }
+                }
+                else
+                {
+                    CBox_tijdslots.Items.Add(item.TimeOfDay.ToString(@"hh\:mm"));
+                    item = item.AddMinutes(activiteit.Tijdslot_grote);
+                }
             }
         }
 
