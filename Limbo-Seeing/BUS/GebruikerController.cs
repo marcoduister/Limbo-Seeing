@@ -100,7 +100,20 @@ namespace Limbo_Seeing.BUS
 
         internal string Update(string NewEmail, string NewName, string NewLastName, DateTime NewBirthDate)
         {
-            return "Deze update functie moet nog uitgewerkt worden";
+            Guid UserId = Guid.Parse(Properties.Settings.Default.UserId);
+            Gebruiker CurentUserData = GetUserdata(UserId);
+
+            CurentUserData.Email = NewEmail;
+            CurentUserData.Voornaam = NewName;
+            CurentUserData.Achternaam = NewLastName;
+            CurentUserData.Geboortendatum = NewBirthDate;
+            CurentUserData.UpdatedOn = DateTime.Now;
+
+            DBContext.Gebruikers.Add(CurentUserData);
+            DBContext.Entry(CurentUserData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            DBContext.SaveChanges();
+
+            return "gegevens opgeslagen";
         }
         public bool Valideergebruiker(Gebruiker gebruiker)
         {
