@@ -106,5 +106,10 @@ namespace Limbo_Seeing.BUS
         {
             return DBContext.Gebruikers.Any(e => e.Email == Gebruiker);
         }
+
+        internal Gebruiker GetUserId(string Email)
+        {
+            return DBContext.Gebruikers.First(e => e.Email == Email);
+        }
     }
 }

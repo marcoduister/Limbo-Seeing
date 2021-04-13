@@ -25,6 +25,10 @@ namespace Limbo_Seeing.Views
             //check username password
             if (_GebruikerController.Login(Email_Textbox.Text, Password_Texbox.Text))
             {
+                Gebruiker curentUser = _GebruikerController.GetUserId(Email_Textbox.Text);
+                Properties.Settings.Default["UserId"] = curentUser.Id.ToString();
+                Properties.Settings.Default["UserRol"] = curentUser.Rol.ToString();
+                Properties.Settings.Default.Save();
                 this.Hide();
                 MainBase mainBase = new MainBase();
                 mainBase.ShowDialog();
@@ -32,6 +36,8 @@ namespace Limbo_Seeing.Views
                 this.Show();
                 this.Email_Textbox.Text = "";
                 this.Password_Texbox.Text = "";
+
+                
             }
             else
             {
