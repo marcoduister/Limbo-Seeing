@@ -24,7 +24,7 @@ namespace Limbo_Seeing.BUS
         }
         public Activiteit GetActiviteitbyGuid(Guid Id)
         {
-            return DBContext.Activiteiten.AsNoTracking().First(F => F.Id == Id);
+            return DBContext.Activiteiten.Include(e =>e.Reseverings).AsNoTracking().First(F => F.Id == Id);
         }
         public bool Create(Activiteit activiteit)
         {

@@ -135,7 +135,7 @@ namespace Limbo_Seeing.Views
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label2.Location = new System.Drawing.Point(206, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 44);
+            this.label2.Size = new System.Drawing.Size(156, 35);
             this.label2.TabIndex = 9;
             this.label2.Text = "Wachtwoord";
             // 
@@ -145,14 +145,14 @@ namespace Limbo_Seeing.Views
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.label1.Location = new System.Drawing.Point(206, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 44);
+            this.label1.Size = new System.Drawing.Size(75, 35);
             this.label1.TabIndex = 8;
             this.label1.Text = "Email";
             // 
             // btn_login
             // 
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.btn_login.Location = new System.Drawing.Point(588, 279);
+            this.btn_login.Location = new System.Drawing.Point(432, 217);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(141, 60);
             this.btn_login.TabIndex = 7;

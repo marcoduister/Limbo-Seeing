@@ -118,7 +118,6 @@ namespace Limbo_Seeing.Views
                 {
                     MessageBox.Show("Uw heeft zo juist een nieuwe Activteit aan gemaakt!");
                     loader();
-
                 }
                 else
                 {
@@ -135,8 +134,6 @@ namespace Limbo_Seeing.Views
             Guid Activtieten_id = new Guid();
             var Startactivteit = dateTime.Date + TimeSpan.Parse(StartTime.Value.TimeOfDay.ToString());
             var Eindactivteit = dateTime.Date + TimeSpan.Parse(EindTime.Value.TimeOfDay.ToString());
-
-            
 
             if (Activtieten_guid.Text != "")
             {
