@@ -51,12 +51,13 @@ namespace Limbo_Seeing.Views
             this.Start_tijd,
             this.Eind_tijd,
             this.Reseveren});
-            this.ActiviteitenDataView.Location = new System.Drawing.Point(12, 89);
+            this.ActiviteitenDataView.Location = new System.Drawing.Point(9, 72);
+            this.ActiviteitenDataView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ActiviteitenDataView.Name = "ActiviteitenDataView";
             this.ActiviteitenDataView.ReadOnly = true;
             this.ActiviteitenDataView.RowHeadersWidth = 51;
             this.ActiviteitenDataView.RowTemplate.Height = 24;
-            this.ActiviteitenDataView.Size = new System.Drawing.Size(902, 349);
+            this.ActiviteitenDataView.Size = new System.Drawing.Size(676, 284);
             this.ActiviteitenDataView.TabIndex = 1;
             this.ActiviteitenDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ActiviteitenDataView_CellContentClick);
             // 
@@ -65,6 +66,7 @@ namespace Limbo_Seeing.Views
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             this.Id.Width = 125;
             // 
@@ -118,10 +120,11 @@ namespace Limbo_Seeing.Views
             // 
             // Activiteiten
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 450);
+            this.ClientSize = new System.Drawing.Size(694, 366);
             this.Controls.Add(this.ActiviteitenDataView);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Activiteiten";
             this.Text = "Activiteiten";
             this.Load += new System.EventHandler(this.Activiteiten_Load);

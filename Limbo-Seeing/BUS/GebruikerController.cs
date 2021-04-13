@@ -68,7 +68,7 @@ namespace Limbo_Seeing.BUS
                                 gebruiker.Wachtwoord = Wachtwoord;
                                 gebruiker.Voornaam = Voornaam;
                                 gebruiker.Achternaam = Achternaam;
-                                //gebruiker.Geboortendatum = GeboorteDatum.ToString();
+                                gebruiker.Geboortendatum = GeboorteDatum;
                                 DBContext.Gebruikers.Add(gebruiker);
                                 DBContext.SaveChanges();
                                 return "de Gebruiker is aan gemaakt ga naar login pagina";
@@ -97,6 +97,11 @@ namespace Limbo_Seeing.BUS
             }
 
         }
+
+        internal string Update(string NewEmail, string NewName, string NewLastName, DateTime NewBirthDate)
+        {
+            return "Deze update functie moet nog uitgewerkt worden";
+        }
         public bool Valideergebruiker(Gebruiker gebruiker)
         {
             return DBContext.Gebruikers.Any(e => e.Email == gebruiker.Email && e.Wachtwoord == gebruiker.Wachtwoord);
@@ -110,6 +115,11 @@ namespace Limbo_Seeing.BUS
         internal Gebruiker GetUserId(string Email)
         {
             return DBContext.Gebruikers.First(e => e.Email == Email);
+        }
+
+        internal Gebruiker GetUserdata(Guid UserId)
+        {
+            return DBContext.Gebruikers.First(e => e.Id == UserId);
         }
     }
 }

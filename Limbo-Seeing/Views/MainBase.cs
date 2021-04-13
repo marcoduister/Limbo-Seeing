@@ -27,7 +27,9 @@ namespace Limbo_Seeing.Views
 
         private void btn_Account_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("account gegevens bij werken komt in een lateren Fase en is momenteel niet opgenomen in Requirements");
+            MijnAccount AccountForm = new MijnAccount();
+            AccountForm.ShowDialog();
+            AccountForm.Dispose();
         }
 
         private void btn_Activiteiten_Click(object sender, EventArgs e)

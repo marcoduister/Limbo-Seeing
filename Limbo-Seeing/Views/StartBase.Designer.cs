@@ -68,7 +68,7 @@ namespace Limbo_Seeing.Views
             this.StartBase_tabControl.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.StartBase_tabControl.ItemSize = new System.Drawing.Size(70, 40);
             this.StartBase_tabControl.Location = new System.Drawing.Point(-2, 2);
-            this.StartBase_tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartBase_tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.StartBase_tabControl.Multiline = true;
             this.StartBase_tabControl.Name = "StartBase_tabControl";
             this.StartBase_tabControl.SelectedIndex = 0;
@@ -81,9 +81,9 @@ namespace Limbo_Seeing.Views
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(33602, 20346);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
@@ -109,9 +109,9 @@ namespace Limbo_Seeing.Views
             this.tabPage2.Controls.Add(this.btn_login);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(33602, 20346);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Login";
@@ -120,7 +120,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Password_Texbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_Texbox.Location = new System.Drawing.Point(308, 122);
-            this.Password_Texbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Password_Texbox.Margin = new System.Windows.Forms.Padding(2);
             this.Password_Texbox.Name = "Password_Texbox";
             this.Password_Texbox.Size = new System.Drawing.Size(130, 23);
             this.Password_Texbox.TabIndex = 11;
@@ -130,7 +130,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Email_Textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_Textbox.Location = new System.Drawing.Point(310, 74);
-            this.Email_Textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Email_Textbox.Margin = new System.Windows.Forms.Padding(2);
             this.Email_Textbox.Name = "Email_Textbox";
             this.Email_Textbox.Size = new System.Drawing.Size(190, 23);
             this.Email_Textbox.TabIndex = 10;
@@ -162,7 +162,7 @@ namespace Limbo_Seeing.Views
             // 
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.btn_login.Location = new System.Drawing.Point(441, 227);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(2);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(106, 49);
             this.btn_login.TabIndex = 7;
@@ -189,9 +189,9 @@ namespace Limbo_Seeing.Views
             this.tabPage3.Controls.Add(this.Reg_Achternaam_textBox);
             this.tabPage3.Controls.Add(this.Reg_Voornaam_textBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 44);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage3.Size = new System.Drawing.Size(33602, 20346);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "registratie";
@@ -199,7 +199,7 @@ namespace Limbo_Seeing.Views
             // btn_Registratie
             // 
             this.btn_Registratie.Location = new System.Drawing.Point(467, 259);
-            this.btn_Registratie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Registratie.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Registratie.Name = "btn_Registratie";
             this.btn_Registratie.Size = new System.Drawing.Size(120, 41);
             this.btn_Registratie.TabIndex = 16;
@@ -215,7 +215,7 @@ namespace Limbo_Seeing.Views
             "man",
             "vrouw"});
             this.Reg_Geslacht_ComboBox.Location = new System.Drawing.Point(142, 143);
-            this.Reg_Geslacht_ComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_Geslacht_ComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_Geslacht_ComboBox.Name = "Reg_Geslacht_ComboBox";
             this.Reg_Geslacht_ComboBox.Size = new System.Drawing.Size(186, 25);
             this.Reg_Geslacht_ComboBox.TabIndex = 15;
@@ -224,7 +224,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Reg_GeboorteDatum_Picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reg_GeboorteDatum_Picker.Location = new System.Drawing.Point(142, 110);
-            this.Reg_GeboorteDatum_Picker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_GeboorteDatum_Picker.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_GeboorteDatum_Picker.Name = "Reg_GeboorteDatum_Picker";
             this.Reg_GeboorteDatum_Picker.Size = new System.Drawing.Size(212, 24);
             this.Reg_GeboorteDatum_Picker.TabIndex = 14;
@@ -233,7 +233,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Reg_wachtwoordConfurm_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reg_wachtwoordConfurm_textBox.Location = new System.Drawing.Point(142, 243);
-            this.Reg_wachtwoordConfurm_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_wachtwoordConfurm_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_wachtwoordConfurm_textBox.Name = "Reg_wachtwoordConfurm_textBox";
             this.Reg_wachtwoordConfurm_textBox.Size = new System.Drawing.Size(186, 24);
             this.Reg_wachtwoordConfurm_textBox.TabIndex = 13;
@@ -243,7 +243,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Reg_Wachtwoord_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reg_Wachtwoord_textBox.Location = new System.Drawing.Point(142, 210);
-            this.Reg_Wachtwoord_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_Wachtwoord_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_Wachtwoord_textBox.Name = "Reg_Wachtwoord_textBox";
             this.Reg_Wachtwoord_textBox.Size = new System.Drawing.Size(186, 24);
             this.Reg_Wachtwoord_textBox.TabIndex = 12;
@@ -253,7 +253,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Reg_Email_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reg_Email_textBox.Location = new System.Drawing.Point(142, 176);
-            this.Reg_Email_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_Email_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_Email_textBox.Name = "Reg_Email_textBox";
             this.Reg_Email_textBox.Size = new System.Drawing.Size(237, 24);
             this.Reg_Email_textBox.TabIndex = 11;
@@ -339,7 +339,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Reg_Achternaam_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reg_Achternaam_textBox.Location = new System.Drawing.Point(142, 76);
-            this.Reg_Achternaam_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_Achternaam_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_Achternaam_textBox.Name = "Reg_Achternaam_textBox";
             this.Reg_Achternaam_textBox.Size = new System.Drawing.Size(117, 24);
             this.Reg_Achternaam_textBox.TabIndex = 1;
@@ -348,7 +348,7 @@ namespace Limbo_Seeing.Views
             // 
             this.Reg_Voornaam_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reg_Voornaam_textBox.Location = new System.Drawing.Point(142, 43);
-            this.Reg_Voornaam_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reg_Voornaam_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.Reg_Voornaam_textBox.Name = "Reg_Voornaam_textBox";
             this.Reg_Voornaam_textBox.Size = new System.Drawing.Size(117, 24);
             this.Reg_Voornaam_textBox.TabIndex = 0;
@@ -361,7 +361,7 @@ namespace Limbo_Seeing.Views
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.StartBase_tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StartBase";
             this.Text = "Limbo-Seeing";
             this.StartBase_tabControl.ResumeLayout(false);
