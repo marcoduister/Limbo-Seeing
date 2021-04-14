@@ -1,4 +1,5 @@
 ﻿using Limbo_Seeing.BUS;
+using Limbo_Seeing.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,8 +35,12 @@ namespace Limbo_Seeing.Views
 
         private void Activiteiten_Load(object sender, EventArgs e)
         {
-           
-
+            if (Properties.Settings.Default.UserRol != (int)Enums.Rolen.Beheerder || Properties.Settings.Default.UserRol != (int)Enums.Rolen.ExtendGebruiker)
+            {
+                btn_beheer.Enabled = false;
+                btn_beheer.Visible = false;
+                beheerlabel.Visible = false;
+            }
             foreach (var Activiteit in _Controller.GetActiviteitens())
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -48,9 +53,15 @@ namespace Limbo_Seeing.Views
                 row.Cells[5].Value = Activiteit.Eind_Activiteit;
                 DataGridViewButtonCell btn_reseveren = new DataGridViewButtonCell() { Value = "Reseveren" };
                 row.Cells[6] = btn_reseveren;
-                //row.Cells[5] = Btn_Beoordeling;
                 ActiviteitenDataView.Rows.Add(row);
             }
+        }
+
+        private void btn_beheer_Click(object sender, EventArgs e)
+        {
+            ActiviteitenBeheer ActiviteitenBeheerForm = new ActiviteitenBeheer();
+            ActiviteitenBeheerForm.ShowDialog();
+            ActiviteitenBeheerForm.Dispose();
         }
     }
 }

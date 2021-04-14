@@ -35,6 +35,7 @@ namespace Limbo_Seeing.Views
             this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Start_Tijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eind_Tijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QRcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Verwijder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Reseveringen_dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -48,8 +49,9 @@ namespace Limbo_Seeing.Views
             this.Adress,
             this.Start_Tijd,
             this.Eind_Tijd,
+            this.QRcode,
             this.Verwijder});
-            this.Reseveringen_dataGridView.Location = new System.Drawing.Point(12, 89);
+            this.Reseveringen_dataGridView.Location = new System.Drawing.Point(12, 12);
             this.Reseveringen_dataGridView.Name = "Reseveringen_dataGridView";
             this.Reseveringen_dataGridView.RowHeadersWidth = 51;
             this.Reseveringen_dataGridView.RowTemplate.Height = 24;
@@ -97,6 +99,13 @@ namespace Limbo_Seeing.Views
             this.Eind_Tijd.ReadOnly = true;
             this.Eind_Tijd.Width = 125;
             // 
+            // QRcode
+            // 
+            this.QRcode.HeaderText = "QRcode";
+            this.QRcode.MinimumWidth = 6;
+            this.QRcode.Name = "QRcode";
+            this.QRcode.Width = 125;
+            // 
             // Verwijder
             // 
             this.Verwijder.HeaderText = "Verwijder Resevering";
@@ -109,7 +118,7 @@ namespace Limbo_Seeing.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 375);
             this.Controls.Add(this.Reseveringen_dataGridView);
             this.Name = "MijnReseveringen";
             this.Text = "MijnReseveringen";
@@ -127,6 +136,7 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Start_Tijd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eind_Tijd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QRcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Verwijder;
     }
 }

@@ -15,21 +15,21 @@ namespace Limbo_Seeing.BUS
 
         public ICollection<Resevering> Overzicht()
         {
-            ICollection<Resevering> reseveringen = DBContext.Reseverings.Include(e => e.Activiteit).Where(e =>e.Gebruiker_Id == new Guid("9245fe4a-d402-451c-b9ed-9c1a04247482")).ToList();
+            ICollection<Resevering> reseveringen = DBContext.Reseverings.Include(e => e.Activiteit).Where(e =>e.Gebruiker_Id == new Guid(Properties.Settings.Default.UserId)).ToList();
             //Alert het hier bovendstaande GebruikerId moet uit Settings gehaald worden
             return reseveringen;
         }
 
         public bool Create(Guid Activteit_id, string Tijd)
         {
-            Activiteit activiteit = DBContext.Activiteiten.First(F => F.Id == Activteit_id);
+            Activiteit activiteit = DBContext.Activiteiten.AsNoTracking().First(F => F.Id == Activteit_id);
             var NewdateTime = activiteit.Start_Activiteit.Date + TimeSpan.Parse(Tijd);
             try
             {
                 Resevering resevering = new Resevering
                 {
                     Activiteit_Id = Activteit_id,
-                    Gebruiker_Id = new Guid("9245fe4a-d402-451c-b9ed-9c1a04247482"),
+                    Gebruiker_Id = new Guid(Properties.Settings.Default.UserId),
                     //Alert het hier bovendstaande GebruikerId moet uit Settings gehaald worden
                     Tijdslot_Start = NewdateTime,
                     Tijdslot_Eind = NewdateTime.AddMinutes(activiteit.Tijdslot_grote)

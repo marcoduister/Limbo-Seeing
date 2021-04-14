@@ -30,8 +30,10 @@ namespace Limbo_Seeing.Views
                 row.Cells[2].Value = resevering.Activiteit.Adress;
                 row.Cells[3].Value = resevering.Tijdslot_Start;
                 row.Cells[4].Value = resevering.Tijdslot_Eind;
+                DataGridViewButtonCell btn_QRcode = new DataGridViewButtonCell() { Value = "QRcode" };
+                row.Cells[5] = btn_QRcode;
                 DataGridViewButtonCell btn_Verwijderen = new DataGridViewButtonCell() { Value = "Verwijderen" };
-                row.Cells[5] = btn_Verwijderen;
+                row.Cells[6] = btn_Verwijderen;
                 Reseveringen_dataGridView.Rows.Add(row);
             }
         }
@@ -51,6 +53,13 @@ namespace Limbo_Seeing.Views
                 {
                     MessageBox.Show("er is iets fout gegaan probeer het later nog eens opnieuw");
                 }
+            }
+            if(Reseveringen_dataGridView.Columns[e.ColumnIndex].Name == "QRcode")
+            {
+                QRCode QRcodeFrom = new QRCode( Resevering_id);
+                QRcodeFrom.ShowDialog();
+                QRcodeFrom.Dispose();
+
             }
         }
     }

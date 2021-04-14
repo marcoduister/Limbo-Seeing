@@ -20,7 +20,10 @@ namespace Limbo_Seeing.BUS
 
             if (login)
             {
-                
+                Gebruiker curentUser = GetUserId(Email);
+                Properties.Settings.Default["UserId"] = curentUser.Id.ToString();
+                Properties.Settings.Default["UserRol"] = (int)curentUser.Rol;
+                Properties.Settings.Default.Save();
             }
 
             return login;
@@ -33,7 +36,9 @@ namespace Limbo_Seeing.BUS
                 if (fm.Name != "StartBase")
                 {
                     fm.Close();
-                    //Properties.Settings.Default.Gebruiker.Clear();
+                    Properties.Settings.Default["UserId"] = "";
+                    Properties.Settings.Default["UserRol"] = 0;
+                    Properties.Settings.Default.Save();
                 }
             }
         }
@@ -92,7 +97,6 @@ namespace Limbo_Seeing.BUS
                         {
                             return "Wachtwoord is niet lang genoeg";
                         }
-
                     }
                     else
                     {

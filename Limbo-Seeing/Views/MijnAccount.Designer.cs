@@ -47,7 +47,8 @@ namespace Limbo_Seeing.Views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 29);
             this.label1.TabIndex = 0;
@@ -57,7 +58,8 @@ namespace Limbo_Seeing.Views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label2.Location = new System.Drawing.Point(207, 103);
+            this.label2.Location = new System.Drawing.Point(171, 67);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 26);
             this.label2.TabIndex = 1;
@@ -67,7 +69,8 @@ namespace Limbo_Seeing.Views
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label3.Location = new System.Drawing.Point(169, 125);
+            this.label3.Location = new System.Drawing.Point(120, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 26);
             this.label3.TabIndex = 2;
@@ -77,7 +80,8 @@ namespace Limbo_Seeing.Views
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label4.Location = new System.Drawing.Point(155, 147);
+            this.label4.Location = new System.Drawing.Point(102, 121);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 26);
             this.label4.TabIndex = 3;
@@ -87,7 +91,8 @@ namespace Limbo_Seeing.Views
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label5.Location = new System.Drawing.Point(122, 169);
+            this.label5.Location = new System.Drawing.Point(58, 148);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 26);
             this.label5.TabIndex = 4;
@@ -97,7 +102,8 @@ namespace Limbo_Seeing.Views
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label6.Location = new System.Drawing.Point(180, 191);
+            this.label6.Location = new System.Drawing.Point(135, 175);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 26);
             this.label6.TabIndex = 5;
@@ -105,47 +111,53 @@ namespace Limbo_Seeing.Views
             // 
             // NewEmail
             // 
-            this.NewEmail.Location = new System.Drawing.Point(267, 105);
+            this.NewEmail.Location = new System.Drawing.Point(251, 69);
+            this.NewEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewEmail.Name = "NewEmail";
-            this.NewEmail.Size = new System.Drawing.Size(233, 20);
+            this.NewEmail.Size = new System.Drawing.Size(309, 22);
             this.NewEmail.TabIndex = 6;
             // 
             // NewName
             // 
-            this.NewName.Location = new System.Drawing.Point(267, 127);
+            this.NewName.Location = new System.Drawing.Point(251, 96);
+            this.NewName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewName.Name = "NewName";
-            this.NewName.Size = new System.Drawing.Size(233, 20);
+            this.NewName.Size = new System.Drawing.Size(309, 22);
             this.NewName.TabIndex = 7;
             // 
             // NewLastName
             // 
-            this.NewLastName.Location = new System.Drawing.Point(267, 149);
+            this.NewLastName.Location = new System.Drawing.Point(251, 123);
+            this.NewLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewLastName.Name = "NewLastName";
-            this.NewLastName.Size = new System.Drawing.Size(233, 20);
+            this.NewLastName.Size = new System.Drawing.Size(309, 22);
             this.NewLastName.TabIndex = 8;
             // 
             // NewBirthDate
             // 
-            this.NewBirthDate.Location = new System.Drawing.Point(267, 171);
+            this.NewBirthDate.Location = new System.Drawing.Point(251, 150);
+            this.NewBirthDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewBirthDate.Name = "NewBirthDate";
-            this.NewBirthDate.Size = new System.Drawing.Size(232, 20);
+            this.NewBirthDate.Size = new System.Drawing.Size(308, 22);
             this.NewBirthDate.TabIndex = 9;
             // 
             // NewSex
             // 
             this.NewSex.FormattingEnabled = true;
-            this.NewSex.Location = new System.Drawing.Point(267, 193);
+            this.NewSex.Location = new System.Drawing.Point(251, 178);
+            this.NewSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewSex.Name = "NewSex";
-            this.NewSex.Size = new System.Drawing.Size(73, 21);
+            this.NewSex.Size = new System.Drawing.Size(96, 24);
             this.NewSex.TabIndex = 10;
             this.NewSex.SelectedIndexChanged += new System.EventHandler(this.NewSex_SelectedIndexChanged);
             // 
             // SaveNewData
             // 
             this.SaveNewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.SaveNewData.Location = new System.Drawing.Point(335, 261);
+            this.SaveNewData.Location = new System.Drawing.Point(342, 261);
+            this.SaveNewData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SaveNewData.Name = "SaveNewData";
-            this.SaveNewData.Size = new System.Drawing.Size(164, 31);
+            this.SaveNewData.Size = new System.Drawing.Size(219, 38);
             this.SaveNewData.TabIndex = 11;
             this.SaveNewData.Text = "Save";
             this.SaveNewData.UseVisualStyleBackColor = true;
@@ -153,9 +165,9 @@ namespace Limbo_Seeing.Views
             // 
             // MijnAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(602, 327);
             this.Controls.Add(this.SaveNewData);
             this.Controls.Add(this.NewSex);
             this.Controls.Add(this.NewBirthDate);
@@ -168,6 +180,7 @@ namespace Limbo_Seeing.Views
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MijnAccount";
             this.Text = "tab";
             this.ResumeLayout(false);
