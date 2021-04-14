@@ -34,15 +34,18 @@ namespace Limbo_Seeing.Views
             this.btn_Account = new System.Windows.Forms.Button();
             this.btn_Activiteiten = new System.Windows.Forms.Button();
             this.btn_Mijn_Reseveringen = new System.Windows.Forms.Button();
+            this.PushMelding = new System.Windows.Forms.Button();
             this.gMapControl = new GMap.NET.WindowsForms.GMapControl();
             this.label2 = new System.Windows.Forms.Label();
+
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 19);
+            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 20);
             this.label1.TabIndex = 4;
@@ -51,9 +54,10 @@ namespace Limbo_Seeing.Views
             // btn_uitloggen
             // 
             this.btn_uitloggen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uitloggen.Location = new System.Drawing.Point(298, 13);
+            this.btn_uitloggen.Location = new System.Drawing.Point(224, 11);
+            this.btn_uitloggen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_uitloggen.Name = "btn_uitloggen";
-            this.btn_uitloggen.Size = new System.Drawing.Size(118, 33);
+            this.btn_uitloggen.Size = new System.Drawing.Size(88, 27);
             this.btn_uitloggen.TabIndex = 3;
             this.btn_uitloggen.Text = "Uitloggen";
             this.btn_uitloggen.UseVisualStyleBackColor = true;
@@ -62,9 +66,10 @@ namespace Limbo_Seeing.Views
             // btn_Account
             // 
             this.btn_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Account.Location = new System.Drawing.Point(422, 13);
+            this.btn_Account.Location = new System.Drawing.Point(316, 11);
+            this.btn_Account.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Account.Name = "btn_Account";
-            this.btn_Account.Size = new System.Drawing.Size(118, 33);
+            this.btn_Account.Size = new System.Drawing.Size(88, 27);
             this.btn_Account.TabIndex = 6;
             this.btn_Account.Text = "Account";
             this.btn_Account.UseVisualStyleBackColor = true;
@@ -73,9 +78,10 @@ namespace Limbo_Seeing.Views
             // btn_Activiteiten
             // 
             this.btn_Activiteiten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Activiteiten.Location = new System.Drawing.Point(598, 13);
+            this.btn_Activiteiten.Location = new System.Drawing.Point(448, 11);
+            this.btn_Activiteiten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Activiteiten.Name = "btn_Activiteiten";
-            this.btn_Activiteiten.Size = new System.Drawing.Size(190, 33);
+            this.btn_Activiteiten.Size = new System.Drawing.Size(142, 27);
             this.btn_Activiteiten.TabIndex = 7;
             this.btn_Activiteiten.Text = "Activiteiten";
             this.btn_Activiteiten.UseVisualStyleBackColor = true;
@@ -84,14 +90,28 @@ namespace Limbo_Seeing.Views
             // btn_Mijn_Reseveringen
             // 
             this.btn_Mijn_Reseveringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Mijn_Reseveringen.Location = new System.Drawing.Point(598, 52);
+            this.btn_Mijn_Reseveringen.Location = new System.Drawing.Point(448, 42);
+            this.btn_Mijn_Reseveringen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Mijn_Reseveringen.Name = "btn_Mijn_Reseveringen";
-            this.btn_Mijn_Reseveringen.Size = new System.Drawing.Size(190, 33);
+            this.btn_Mijn_Reseveringen.Size = new System.Drawing.Size(142, 27);
             this.btn_Mijn_Reseveringen.TabIndex = 8;
             this.btn_Mijn_Reseveringen.Text = "Mijn Reseveringen";
             this.btn_Mijn_Reseveringen.UseVisualStyleBackColor = true;
             this.btn_Mijn_Reseveringen.Click += new System.EventHandler(this.btn_Mijn_Reseveringen_Click);
             // 
+
+            // PushMelding
+            // 
+            this.PushMelding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PushMelding.Location = new System.Drawing.Point(447, 306);
+            this.PushMelding.Margin = new System.Windows.Forms.Padding(2);
+            this.PushMelding.Name = "PushMelding";
+            this.PushMelding.Size = new System.Drawing.Size(142, 49);
+            this.PushMelding.TabIndex = 9;
+            this.PushMelding.Text = "Push meldingen aan/uit zetten";
+            this.PushMelding.UseVisualStyleBackColor = true;
+            this.PushMelding.Click += new System.EventHandler(this.PushMelding_Click);
+
             // gMapControl
             // 
             this.gMapControl.Bearing = 0F;
@@ -127,12 +147,14 @@ namespace Limbo_Seeing.Views
             this.label2.Size = new System.Drawing.Size(445, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Geel = 5+ personen, Blauw = 10+ personen en Rood = 50+ personen";
+
             // 
             // MainBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 482);
+            this.Controls.Add(this.PushMelding);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gMapControl);
             this.Controls.Add(this.btn_Mijn_Reseveringen);
@@ -140,6 +162,7 @@ namespace Limbo_Seeing.Views
             this.Controls.Add(this.btn_Account);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_uitloggen);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainBase";
             this.Text = "MainBase";
             this.Load += new System.EventHandler(this.MainBase_Load);
@@ -154,7 +177,9 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.Button btn_Account;
         private System.Windows.Forms.Button btn_Activiteiten;
         private System.Windows.Forms.Button btn_Mijn_Reseveringen;
+        private System.Windows.Forms.Button PushMelding;
         private GMap.NET.WindowsForms.GMapControl gMapControl;
         private System.Windows.Forms.Label label2;
+
     }
 }

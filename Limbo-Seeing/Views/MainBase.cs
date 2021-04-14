@@ -34,7 +34,9 @@ namespace Limbo_Seeing.Views
 
         private void btn_Account_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("account gegevens bij werken komt in een lateren Fase en is momenteel niet opgenomen in Requirements");
+            MijnAccount AccountForm = new MijnAccount();
+            AccountForm.ShowDialog();
+            AccountForm.Dispose();
         }
 
         private void btn_Activiteiten_Click(object sender, EventArgs e)
@@ -50,7 +52,21 @@ namespace Limbo_Seeing.Views
             MijnReseveringenForm.ShowDialog();
             MijnReseveringenForm.Dispose();
         }
-
+        
+        private void PushMelding_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.PushMelding == false)
+            {
+                Properties.Settings.Default["UserRol"] = true;
+                MessageBox.Show("Push meldingen aan gezet");
+            }
+            else
+            {
+                Properties.Settings.Default["UserRol"] = false;
+                MessageBox.Show("Push meldingen uit gezet");
+            }
+         }
+         
         private void MainBase_Load(object sender, EventArgs e)
         {
             gMapControl.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
@@ -81,7 +97,9 @@ namespace Limbo_Seeing.Views
                 GMapOverlay polyOverlay = new GMapOverlay("polygons");
                 gMapControl.Overlays.Add(polyOverlay);
                 polyOverlay.Polygons.Add(_SensorController.GenerateRadius(item.Locatie, item.Id));
+
             }
         }
+        
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Limbo_Seeing.BUS
 {
@@ -45,55 +46,81 @@ namespace Limbo_Seeing.BUS
             }
             else
             {
-                if (Wachtwoord == WachtwoordConfirm)
+                if (Regex.IsMatch(Email, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
                 {
-                    if (Wachtwoord.Length >= 8)
+                    if (Wachtwoord == WachtwoordConfirm)
                     {
-                        int IsupperCounter = 0;
+                        if (Wachtwoord.Length >= 8)
+                        {
+                            int IsupperCounter = 0;
 
-                        for (int i = 0; i < Wachtwoord.Length; i++)
-                        {
-                            if (char.IsUpper(Wachtwoord[i])) IsupperCounter++;
-                        }
-                        if (IsupperCounter >= 1)
-                        {
-                            if (Wachtwoord.Any(char.IsDigit))
+                            for (int i = 0; i < Wachtwoord.Length; i++)
                             {
-                                Gebruiker gebruiker = new Gebruiker();
-                                if (Geslacht == 0)
-                                    gebruiker.Geslacht = Enums.Geslachten.Man;
+                                if (char.IsUpper(Wachtwoord[i])) IsupperCounter++;
+                            }
+                            if (IsupperCounter >= 1)
+                            {
+                                if (Wachtwoord.Any(char.IsDigit))
+                                {
+                                    Gebruiker gebruiker = new Gebruiker();
+                                    if (Geslacht == 0)
+                                        gebruiker.Geslacht = Enums.Geslachten.Man;
+                                    else
+                                        gebruiker.Geslacht = Enums.Geslachten.Vrouw;
+                                    gebruiker.Email = Email;
+                                    gebruiker.Wachtwoord = Wachtwoord;      //Wachtwoord hash TODO 
+                                    gebruiker.Voornaam = Voornaam;
+                                    gebruiker.Achternaam = Achternaam;
+                                    gebruiker.Geboortendatum = GeboorteDatum;
+                                    gebruiker.Rol = 0;
+                                    DBContext.Gebruikers.Add(gebruiker);
+                                    DBContext.SaveChanges();
+                                    return "de Gebruiker is aan gemaakt ga naar login pagina";
+                                }
                                 else
-                                    gebruiker.Geslacht = Enums.Geslachten.Vrouw;
-                                gebruiker.Email = Email;
-                                gebruiker.Wachtwoord = Wachtwoord;
-                                gebruiker.Voornaam = Voornaam;
-                                gebruiker.Achternaam = Achternaam;
-                                //gebruiker.Geboortendatum = GeboorteDatum.ToString();
-                                DBContext.Gebruikers.Add(gebruiker);
-                                DBContext.SaveChanges();
-                                return "de Gebruiker is aan gemaakt ga naar login pagina";
+                                {
+                                    return "Wachtwoord moet minimaal 1 Nummer bevaten";
+                                }
                             }
                             else
                             {
-                                return "Wachtwoord moet minimaal 1 Nummer bevaten";
+                                return "Wachtwoord moet minimaal 1 Hooftletter bevaten";
                             }
+
                         }
                         else
                         {
-                            return "Wachtwoord moet minimaal 1 Hooftletter bevaten";
+                            return "Wachtwoord is niet lang genoeg";
                         }
                     }
                     else
                     {
-                        return "Wachtwoord is niet lang genoeg";
+                        return "Conferm wachtwoord klopt niet!!";
                     }
                 }
                 else
                 {
-                    return "Conferm wachtwoord klopt niet!!";
+                    return "Geen geldige email!!";
                 }
             }
+        }
 
+        internal string Update(string NewEmail, string NewName, string NewLastName, DateTime NewBirthDate)
+        {
+            Guid UserId = Guid.Parse(Properties.Settings.Default.UserId);
+            Gebruiker CurentUserData = GetUserdata(UserId);
+
+            CurentUserData.Email = NewEmail;
+            CurentUserData.Voornaam = NewName;
+            CurentUserData.Achternaam = NewLastName;
+            CurentUserData.Geboortendatum = NewBirthDate;
+            CurentUserData.UpdatedOn = DateTime.Now;
+
+            DBContext.Gebruikers.Add(CurentUserData);
+            DBContext.Entry(CurentUserData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            DBContext.SaveChanges();
+
+            return "gegevens opgeslagen";
         }
         public bool Valideergebruiker(Gebruiker gebruiker)
         {
@@ -103,6 +130,16 @@ namespace Limbo_Seeing.BUS
         internal bool CheckGebruikerByEmail(string Gebruiker)
         {
             return DBContext.Gebruikers.Any(e => e.Email == Gebruiker);
+        }
+
+        internal Gebruiker GetUserId(string Email)
+        {
+            return DBContext.Gebruikers.First(e => e.Email == Email);
+        }
+
+        internal Gebruiker GetUserdata(Guid UserId)
+        {
+            return DBContext.Gebruikers.First(e => e.Id == UserId);
         }
     }
 }
