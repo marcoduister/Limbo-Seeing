@@ -37,6 +37,8 @@ namespace Limbo_Seeing.Views
             this.Start_tijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eind_tijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reseveren = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_beheer = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ActiviteitenDataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,13 +53,14 @@ namespace Limbo_Seeing.Views
             this.Start_tijd,
             this.Eind_tijd,
             this.Reseveren});
-            this.ActiviteitenDataView.Location = new System.Drawing.Point(9, 72);
+
+            this.ActiviteitenDataView.Location = new System.Drawing.Point(12, 47);
             this.ActiviteitenDataView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ActiviteitenDataView.Name = "ActiviteitenDataView";
             this.ActiviteitenDataView.ReadOnly = true;
             this.ActiviteitenDataView.RowHeadersWidth = 51;
             this.ActiviteitenDataView.RowTemplate.Height = 24;
-            this.ActiviteitenDataView.Size = new System.Drawing.Size(676, 284);
+            this.ActiviteitenDataView.Size = new System.Drawing.Size(902, 391);
             this.ActiviteitenDataView.TabIndex = 1;
             this.ActiviteitenDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ActiviteitenDataView_CellContentClick);
             // 
@@ -118,11 +121,32 @@ namespace Limbo_Seeing.Views
             this.Reseveren.ReadOnly = true;
             this.Reseveren.Width = 125;
             // 
+            // btn_beheer
+            // 
+            this.btn_beheer.Location = new System.Drawing.Point(181, 12);
+            this.btn_beheer.Name = "btn_beheer";
+            this.btn_beheer.Size = new System.Drawing.Size(109, 29);
+            this.btn_beheer.TabIndex = 2;
+            this.btn_beheer.Text = "Beheer";
+            this.btn_beheer.UseVisualStyleBackColor = true;
+            this.btn_beheer.Click += new System.EventHandler(this.btn_beheer_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Mijn Activiteiten Beheren";
+            // 
             // Activiteiten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 366);
+            this.ClientSize = new System.Drawing.Size(926, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_beheer);
             this.Controls.Add(this.ActiviteitenDataView);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Activiteiten";
@@ -130,6 +154,7 @@ namespace Limbo_Seeing.Views
             this.Load += new System.EventHandler(this.Activiteiten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ActiviteitenDataView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,5 +168,7 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn Start_tijd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eind_tijd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reseveren;
+        private System.Windows.Forms.Button btn_beheer;
+        private System.Windows.Forms.Label label1;
     }
 }

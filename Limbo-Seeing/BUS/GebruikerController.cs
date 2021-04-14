@@ -92,7 +92,6 @@ namespace Limbo_Seeing.BUS
                         {
                             return "Wachtwoord is niet lang genoeg";
                         }
-
                     }
                     else
                     {

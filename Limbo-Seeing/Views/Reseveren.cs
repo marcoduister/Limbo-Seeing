@@ -26,12 +26,31 @@ namespace Limbo_Seeing.Views
             
 
             Activiteit activiteit = activiteitenController.GetActiviteitbyGuid(Activiteit_id);
+
             activteit_actie_label.Text = activiteit.Naam;
             var item = activiteit.Start_Activiteit;
             while (item <= activiteit.Eind_Activiteit)
             {
-                CBox_tijdslots.Items.Add(item.TimeOfDay.ToString(@"hh\:mm"));
-                item = item.AddMinutes(activiteit.Tijdslot_grote);
+                
+                if (activiteit.Eind_Activiteit == item )
+                {
+                    if (activiteit.Tijdslot_grote >= 0)
+                    {
+                        if (activiteit.Reseverings.Count(e => e.Tijdslot_Start == item) != activiteit.Aantal)
+                        {
+                            CBox_tijdslots.Items.Add(item.TimeOfDay.ToString(@"hh\:mm"));
+                        }
+                        item = item.AddMinutes(30);
+                    }
+                }
+                else
+                {
+                    if (activiteit.Reseverings.Count(e => e.Tijdslot_Start == item) != activiteit.Aantal)
+                    {
+                        CBox_tijdslots.Items.Add(item.TimeOfDay.ToString(@"hh\:mm"));
+                    }
+                    item = item.AddMinutes(activiteit.Tijdslot_grote);
+                }
             }
         }
 
@@ -46,7 +65,6 @@ namespace Limbo_Seeing.Views
             {
                 MessageBox.Show("er is iets fout gegaan met de resevering probeer het op nieuw of probeer een anderen tijd!");
             }
-            
         }
 
         private void btn_terug_Click(object sender, EventArgs e)

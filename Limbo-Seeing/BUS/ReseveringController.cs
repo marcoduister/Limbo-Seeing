@@ -22,7 +22,7 @@ namespace Limbo_Seeing.BUS
 
         public bool Create(Guid Activteit_id, string Tijd)
         {
-            Activiteit activiteit = DBContext.Activiteiten.First(F => F.Id == Activteit_id);
+            Activiteit activiteit = DBContext.Activiteiten.AsNoTracking().First(F => F.Id == Activteit_id);
             var NewdateTime = activiteit.Start_Activiteit.Date + TimeSpan.Parse(Tijd);
             try
             {

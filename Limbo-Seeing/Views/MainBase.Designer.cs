@@ -35,6 +35,9 @@ namespace Limbo_Seeing.Views
             this.btn_Activiteiten = new System.Windows.Forms.Button();
             this.btn_Mijn_Reseveringen = new System.Windows.Forms.Button();
             this.PushMelding = new System.Windows.Forms.Button();
+            this.gMapControl = new GMap.NET.WindowsForms.GMapControl();
+            this.label2 = new System.Windows.Forms.Label();
+
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +99,7 @@ namespace Limbo_Seeing.Views
             this.btn_Mijn_Reseveringen.UseVisualStyleBackColor = true;
             this.btn_Mijn_Reseveringen.Click += new System.EventHandler(this.btn_Mijn_Reseveringen_Click);
             // 
+
             // PushMelding
             // 
             this.PushMelding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,13 +111,52 @@ namespace Limbo_Seeing.Views
             this.PushMelding.Text = "Push meldingen aan/uit zetten";
             this.PushMelding.UseVisualStyleBackColor = true;
             this.PushMelding.Click += new System.EventHandler(this.PushMelding_Click);
+
+            // gMapControl
+            // 
+            this.gMapControl.Bearing = 0F;
+            this.gMapControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gMapControl.CanDragMap = false;
+            this.gMapControl.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl.GrayScaleMode = false;
+            this.gMapControl.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl.LevelsKeepInMemory = 5;
+            this.gMapControl.Location = new System.Drawing.Point(18, 65);
+            this.gMapControl.MarkersEnabled = true;
+            this.gMapControl.MaxZoom = 20;
+            this.gMapControl.MinZoom = 1;
+            this.gMapControl.MouseWheelZoomEnabled = true;
+            this.gMapControl.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl.Name = "gMapControl";
+            this.gMapControl.NegativeMode = false;
+            this.gMapControl.PolygonsEnabled = true;
+            this.gMapControl.RetryLoadTile = 0;
+            this.gMapControl.RoutesEnabled = true;
+            this.gMapControl.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl.ShowTileGridLines = false;
+            this.gMapControl.Size = new System.Drawing.Size(548, 386);
+            this.gMapControl.TabIndex = 9;
+            this.gMapControl.Zoom = 15D;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 456);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(445, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Geel = 5+ personen, Blauw = 10+ personen en Rood = 50+ personen";
+
             // 
             // MainBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 482);
             this.Controls.Add(this.PushMelding);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.gMapControl);
             this.Controls.Add(this.btn_Mijn_Reseveringen);
             this.Controls.Add(this.btn_Activiteiten);
             this.Controls.Add(this.btn_Account);
@@ -122,6 +165,7 @@ namespace Limbo_Seeing.Views
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainBase";
             this.Text = "MainBase";
+            this.Load += new System.EventHandler(this.MainBase_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +178,8 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.Button btn_Activiteiten;
         private System.Windows.Forms.Button btn_Mijn_Reseveringen;
         private System.Windows.Forms.Button PushMelding;
+        private GMap.NET.WindowsForms.GMapControl gMapControl;
+        private System.Windows.Forms.Label label2;
+
     }
 }

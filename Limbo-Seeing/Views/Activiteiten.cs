@@ -34,8 +34,6 @@ namespace Limbo_Seeing.Views
 
         private void Activiteiten_Load(object sender, EventArgs e)
         {
-           
-
             foreach (var Activiteit in _Controller.GetActiviteitens())
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -48,9 +46,15 @@ namespace Limbo_Seeing.Views
                 row.Cells[5].Value = Activiteit.Eind_Activiteit;
                 DataGridViewButtonCell btn_reseveren = new DataGridViewButtonCell() { Value = "Reseveren" };
                 row.Cells[6] = btn_reseveren;
-                //row.Cells[5] = Btn_Beoordeling;
                 ActiviteitenDataView.Rows.Add(row);
             }
+        }
+
+        private void btn_beheer_Click(object sender, EventArgs e)
+        {
+            ActiviteitenBeheer ActiviteitenBeheerForm = new ActiviteitenBeheer();
+            ActiviteitenBeheerForm.ShowDialog();
+            ActiviteitenBeheerForm.Dispose();
         }
     }
 }
