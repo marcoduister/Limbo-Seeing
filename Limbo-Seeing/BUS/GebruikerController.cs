@@ -72,6 +72,7 @@ namespace Limbo_Seeing.BUS
                                     gebruiker.Voornaam = Voornaam;
                                     gebruiker.Achternaam = Achternaam;
                                     gebruiker.Geboortendatum = GeboorteDatum;
+                                    gebruiker.Rol = 0;
                                     DBContext.Gebruikers.Add(gebruiker);
                                     DBContext.SaveChanges();
                                     return "de Gebruiker is aan gemaakt ga naar login pagina";

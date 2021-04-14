@@ -46,10 +46,19 @@ namespace Limbo_Seeing.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string UserRol {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UserRol {
             get {
-                return ((string)(this["UserRol"]));
+                return ((int)(this["UserRol"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PushMelding {
+            get {
+                return ((bool)(this["PushMelding"]));
             }
         }
     }

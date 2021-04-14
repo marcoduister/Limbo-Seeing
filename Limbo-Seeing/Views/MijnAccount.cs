@@ -32,12 +32,29 @@ namespace Limbo_Seeing.Views
             NewName.Text = CurentUserData.Voornaam;
             NewLastName.Text = CurentUserData.Achternaam;
             NewBirthDate.Value = CurentUserData.Geboortendatum;
-            //NewSex.ValueMember = CurentUserData.Geslacht.ToString();
+            
+            if (CurentUserData.Geslacht == Enums.Geslachten.Man)
+            {
+                NewSex.SelectedIndex = 0;
+            } 
+            else if (CurentUserData.Geslacht == Enums.Geslachten.Vrouw)
+            {
+                NewSex.SelectedIndex = 1;
+            }
+            else
+            {
+                NewSex.SelectedIndex = 2;
+            }
         }
 
         private void SaveNewData_Click(object sender, EventArgs e)
         {
             MessageBox.Show(gebruikerController.Update(NewEmail.Text, NewName.Text, NewLastName.Text, NewBirthDate.Value));
+        }
+
+        private void NewSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

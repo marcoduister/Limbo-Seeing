@@ -49,7 +49,7 @@ namespace Limbo_Seeing.Views
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 25);
+            this.label1.Size = new System.Drawing.Size(222, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Account gegevens";
             // 
@@ -59,7 +59,7 @@ namespace Limbo_Seeing.Views
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label2.Location = new System.Drawing.Point(207, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 22);
+            this.label2.Size = new System.Drawing.Size(68, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email";
             // 
@@ -69,7 +69,7 @@ namespace Limbo_Seeing.Views
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label3.Location = new System.Drawing.Point(169, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 22);
+            this.label3.Size = new System.Drawing.Size(113, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Voornaam";
             // 
@@ -79,7 +79,7 @@ namespace Limbo_Seeing.Views
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label4.Location = new System.Drawing.Point(155, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 22);
+            this.label4.Size = new System.Drawing.Size(130, 26);
             this.label4.TabIndex = 3;
             this.label4.Text = "Achternaam";
             // 
@@ -89,7 +89,7 @@ namespace Limbo_Seeing.Views
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label5.Location = new System.Drawing.Point(122, 169);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 22);
+            this.label5.Size = new System.Drawing.Size(169, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Geboorte datum";
             // 
@@ -99,7 +99,7 @@ namespace Limbo_Seeing.Views
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label6.Location = new System.Drawing.Point(180, 191);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 22);
+            this.label6.Size = new System.Drawing.Size(98, 26);
             this.label6.TabIndex = 5;
             this.label6.Text = "Geslacht";
             // 
@@ -138,6 +138,7 @@ namespace Limbo_Seeing.Views
             this.NewSex.Name = "NewSex";
             this.NewSex.Size = new System.Drawing.Size(73, 21);
             this.NewSex.TabIndex = 10;
+            this.NewSex.SelectedIndexChanged += new System.EventHandler(this.NewSex_SelectedIndexChanged);
             // 
             // SaveNewData
             // 

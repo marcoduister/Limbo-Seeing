@@ -45,5 +45,19 @@ namespace Limbo_Seeing.Views
             MijnReseveringenForm.ShowDialog();
             MijnReseveringenForm.Dispose();
         }
+
+        private void PushMelding_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.PushMelding == false)
+            {
+                Properties.Settings.Default["UserRol"] = true;
+                MessageBox.Show("Push meldingen aan gezet");
+            }
+            else
+            {
+                Properties.Settings.Default["UserRol"] = false;
+                MessageBox.Show("Push meldingen uit gezet");
+            }
+        }
     }
 }

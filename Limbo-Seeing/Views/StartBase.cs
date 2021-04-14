@@ -27,7 +27,7 @@ namespace Limbo_Seeing.Views
             {
                 Gebruiker curentUser = _GebruikerController.GetUserId(Email_Textbox.Text);
                 Properties.Settings.Default["UserId"] = curentUser.Id.ToString();
-                Properties.Settings.Default["UserRol"] = curentUser.Rol.ToString();
+                Properties.Settings.Default["UserRol"] = curentUser.Rol;
                 Properties.Settings.Default.Save();
                 this.Hide();
                 MainBase mainBase = new MainBase();
