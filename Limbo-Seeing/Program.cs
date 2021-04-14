@@ -26,9 +26,5 @@ namespace Limbo_Seeing
 
             
         }
-        private static void Seeder()
-        {
-
-        }
     }
 }

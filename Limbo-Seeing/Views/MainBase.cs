@@ -21,6 +21,7 @@ namespace Limbo_Seeing.Views
     {
         private GebruikerController _GebruikerController = new GebruikerController();
         private SensorController _SensorController = new SensorController();
+        private ActiviteitenController _ActiviteitenController = new ActiviteitenController();
 
         public MainBase()
         {
@@ -57,12 +58,12 @@ namespace Limbo_Seeing.Views
         {
             if (Properties.Settings.Default.PushMelding == false)
             {
-                Properties.Settings.Default["UserRol"] = true;
+                //Properties.Settings.Default["UserRol"] = true;
                 MessageBox.Show("Push meldingen aan gezet");
             }
             else
             {
-                Properties.Settings.Default["UserRol"] = false;
+               //Properties.Settings.Default["UserRol"] = false;
                 MessageBox.Show("Push meldingen uit gezet");
             }
          }
@@ -74,24 +75,6 @@ namespace Limbo_Seeing.Views
             gMapControl.Position = new GMap.NET.PointLatLng(50.864278, 5.831776);
             gMapControl.ShowCenter = false;
 
-
-            //GMapOverlay markersOverlay = new GMapOverlay("markers");
-            //GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(-25.969562, 32.585789),
-            //GMarkerGoogleType.green);
-            //markersOverlay.Markers.Add(marker);
-            //gMapControl.Overlays.Add(markersOverlay);
-
-            //GMapOverlay polyOverlay = new GMapOverlay("polygons");
-            //List<PointLatLng> points = new List<PointLatLng>();
-            //points.Add(new PointLatLng(-25.969562, 32.585789));
-            //points.Add(new PointLatLng(-25.966205, 32.588171));
-            //points.Add(new PointLatLng(-25.968134, 32.591647));
-            //points.Add(new PointLatLng(-25.971684, 32.589759));
-            //GMapPolygon polygon = new GMapPolygon(points, "mypolygon");
-            //polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));
-            //polygon.Stroke = new Pen(Color.Red, 1);
-            //gMapControl.Overlays.Add(polyOverlay);
-            //polyOverlay.Polygons.Add(polygon);
             foreach (var item in _SensorController.GetAllSensorData())
             {
                 GMapOverlay polyOverlay = new GMapOverlay("polygons");
@@ -99,7 +82,17 @@ namespace Limbo_Seeing.Views
                 polyOverlay.Polygons.Add(_SensorController.GenerateRadius(item.Locatie, item.Id));
 
             }
+            foreach (var item in _ActiviteitenController.GetActiviteitens().Where(q=>q.Start_Activiteit.Day == DateTime.Today.Day ))
+            {
+                
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(Activteiten_datagrid);
+                row.Cells[0].Value = item.Naam;
+                row.Cells[1].Value = item.Adress;
+                row.Cells[2].Value = item.Reseverings.Count();
+
+                Activteiten_datagrid.Rows.Add(row);
+            }
         }
-        
     }
 }

@@ -37,15 +37,19 @@ namespace Limbo_Seeing.Views
             this.PushMelding = new System.Windows.Forms.Button();
             this.gMapControl = new GMap.NET.WindowsForms.GMapControl();
             this.label2 = new System.Windows.Forms.Label();
-
+            this.Activteiten_datagrid = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Naam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Locatie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Drukte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Activteiten_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(209, 20);
             this.label1.TabIndex = 4;
@@ -54,10 +58,10 @@ namespace Limbo_Seeing.Views
             // btn_uitloggen
             // 
             this.btn_uitloggen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uitloggen.Location = new System.Drawing.Point(224, 11);
-            this.btn_uitloggen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_uitloggen.Location = new System.Drawing.Point(299, 14);
+            this.btn_uitloggen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_uitloggen.Name = "btn_uitloggen";
-            this.btn_uitloggen.Size = new System.Drawing.Size(88, 27);
+            this.btn_uitloggen.Size = new System.Drawing.Size(117, 33);
             this.btn_uitloggen.TabIndex = 3;
             this.btn_uitloggen.Text = "Uitloggen";
             this.btn_uitloggen.UseVisualStyleBackColor = true;
@@ -66,10 +70,10 @@ namespace Limbo_Seeing.Views
             // btn_Account
             // 
             this.btn_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Account.Location = new System.Drawing.Point(316, 11);
-            this.btn_Account.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Account.Location = new System.Drawing.Point(421, 14);
+            this.btn_Account.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Account.Name = "btn_Account";
-            this.btn_Account.Size = new System.Drawing.Size(88, 27);
+            this.btn_Account.Size = new System.Drawing.Size(117, 33);
             this.btn_Account.TabIndex = 6;
             this.btn_Account.Text = "Account";
             this.btn_Account.UseVisualStyleBackColor = true;
@@ -78,10 +82,10 @@ namespace Limbo_Seeing.Views
             // btn_Activiteiten
             // 
             this.btn_Activiteiten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Activiteiten.Location = new System.Drawing.Point(448, 11);
-            this.btn_Activiteiten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Activiteiten.Location = new System.Drawing.Point(544, 14);
+            this.btn_Activiteiten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Activiteiten.Name = "btn_Activiteiten";
-            this.btn_Activiteiten.Size = new System.Drawing.Size(142, 27);
+            this.btn_Activiteiten.Size = new System.Drawing.Size(120, 33);
             this.btn_Activiteiten.TabIndex = 7;
             this.btn_Activiteiten.Text = "Activiteiten";
             this.btn_Activiteiten.UseVisualStyleBackColor = true;
@@ -90,28 +94,27 @@ namespace Limbo_Seeing.Views
             // btn_Mijn_Reseveringen
             // 
             this.btn_Mijn_Reseveringen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Mijn_Reseveringen.Location = new System.Drawing.Point(448, 42);
-            this.btn_Mijn_Reseveringen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Mijn_Reseveringen.Location = new System.Drawing.Point(670, 14);
+            this.btn_Mijn_Reseveringen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Mijn_Reseveringen.Name = "btn_Mijn_Reseveringen";
-            this.btn_Mijn_Reseveringen.Size = new System.Drawing.Size(142, 27);
+            this.btn_Mijn_Reseveringen.Size = new System.Drawing.Size(189, 33);
             this.btn_Mijn_Reseveringen.TabIndex = 8;
             this.btn_Mijn_Reseveringen.Text = "Mijn Reseveringen";
             this.btn_Mijn_Reseveringen.UseVisualStyleBackColor = true;
             this.btn_Mijn_Reseveringen.Click += new System.EventHandler(this.btn_Mijn_Reseveringen_Click);
             // 
-
             // PushMelding
             // 
             this.PushMelding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PushMelding.Location = new System.Drawing.Point(447, 306);
-            this.PushMelding.Margin = new System.Windows.Forms.Padding(2);
+            this.PushMelding.Location = new System.Drawing.Point(865, 14);
+            this.PushMelding.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PushMelding.Name = "PushMelding";
-            this.PushMelding.Size = new System.Drawing.Size(142, 49);
+            this.PushMelding.Size = new System.Drawing.Size(189, 54);
             this.PushMelding.TabIndex = 9;
             this.PushMelding.Text = "Push meldingen aan/uit zetten";
             this.PushMelding.UseVisualStyleBackColor = true;
             this.PushMelding.Click += new System.EventHandler(this.PushMelding_Click);
-
+            // 
             // gMapControl
             // 
             this.gMapControl.Bearing = 0F;
@@ -121,7 +124,8 @@ namespace Limbo_Seeing.Views
             this.gMapControl.GrayScaleMode = false;
             this.gMapControl.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl.LevelsKeepInMemory = 5;
-            this.gMapControl.Location = new System.Drawing.Point(18, 65);
+            this.gMapControl.Location = new System.Drawing.Point(24, 80);
+            this.gMapControl.Margin = new System.Windows.Forms.Padding(4);
             this.gMapControl.MarkersEnabled = true;
             this.gMapControl.MaxZoom = 20;
             this.gMapControl.MinZoom = 1;
@@ -135,25 +139,75 @@ namespace Limbo_Seeing.Views
             this.gMapControl.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl.ShowTileGridLines = false;
-            this.gMapControl.Size = new System.Drawing.Size(548, 386);
+            this.gMapControl.Size = new System.Drawing.Size(730, 475);
             this.gMapControl.TabIndex = 9;
             this.gMapControl.Zoom = 15D;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 456);
+            this.label2.Location = new System.Drawing.Point(20, 561);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(445, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Geel = 5+ personen, Blauw = 10+ personen en Rood = 50+ personen";
-
+            // 
+            // Activteiten_datagrid
+            // 
+            this.Activteiten_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Activteiten_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Naam,
+            this.Locatie,
+            this.Drukte});
+            this.Activteiten_datagrid.Location = new System.Drawing.Point(777, 321);
+            this.Activteiten_datagrid.Name = "Activteiten_datagrid";
+            this.Activteiten_datagrid.RowHeadersWidth = 51;
+            this.Activteiten_datagrid.RowTemplate.Height = 24;
+            this.Activteiten_datagrid.Size = new System.Drawing.Size(277, 234);
+            this.Activteiten_datagrid.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(773, 287);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Vandaag tedoen in de stad";
+            // 
+            // Naam
+            // 
+            this.Naam.HeaderText = "Naam";
+            this.Naam.MinimumWidth = 6;
+            this.Naam.Name = "Naam";
+            this.Naam.ReadOnly = true;
+            this.Naam.Width = 125;
+            // 
+            // Locatie
+            // 
+            this.Locatie.HeaderText = "Locatie";
+            this.Locatie.MinimumWidth = 6;
+            this.Locatie.Name = "Locatie";
+            this.Locatie.ReadOnly = true;
+            this.Locatie.Width = 125;
+            // 
+            // Drukte
+            // 
+            this.Drukte.HeaderText = "Aantal Reseveringen";
+            this.Drukte.MinimumWidth = 6;
+            this.Drukte.Name = "Drukte";
+            this.Drukte.ReadOnly = true;
+            this.Drukte.Width = 125;
             // 
             // MainBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.ClientSize = new System.Drawing.Size(1067, 593);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Activteiten_datagrid);
             this.Controls.Add(this.PushMelding);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gMapControl);
@@ -162,10 +216,11 @@ namespace Limbo_Seeing.Views
             this.Controls.Add(this.btn_Account);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_uitloggen);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainBase";
             this.Text = "MainBase";
             this.Load += new System.EventHandler(this.MainBase_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Activteiten_datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +235,10 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.Button PushMelding;
         private GMap.NET.WindowsForms.GMapControl gMapControl;
         private System.Windows.Forms.Label label2;
-
+        private System.Windows.Forms.DataGridView Activteiten_datagrid;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Locatie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Drukte;
     }
 }
