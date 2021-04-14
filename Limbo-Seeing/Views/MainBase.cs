@@ -80,7 +80,7 @@ namespace Limbo_Seeing.Views
             {
                 GMapOverlay polyOverlay = new GMapOverlay("polygons");
                 gMapControl.Overlays.Add(polyOverlay);
-                polyOverlay.Polygons.Add(_SensorController.GenerateRadius(item.Locatie));
+                polyOverlay.Polygons.Add(_SensorController.GenerateRadius(item.Locatie, item.Id));
             }
         }
     }

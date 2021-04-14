@@ -230,6 +230,7 @@
     <Compile Include="BUS\GebruikerController.cs" />
     <Compile Include="BUS\ReseveringController.cs" />
     <Compile Include="BUS\SensorController.cs" />
+    <Compile Include="DAL\DataSeeder.cs" />
     <Compile Include="Migrations\20210409170627_Initial.cs" />
     <Compile Include="Migrations\20210409170627_Initial.designer.cs">
       <DependentUpon>20210409170627_Initial.cs</DependentUpon>

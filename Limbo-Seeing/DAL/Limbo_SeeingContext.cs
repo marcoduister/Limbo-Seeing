@@ -26,6 +26,7 @@ namespace Limbo_Seeing.DAL
             modelBuilder.Entity<Activiteit>().HasOne(p => p.Gebruiker).WithMany(M => M.Activiteitens).HasForeignKey(F => F.Gebruiker_Id);
             modelBuilder.Entity<Activiteit>().HasMany(M => M.Reseverings).WithOne(O => O.Activiteit).HasForeignKey(F => F.Activiteit_Id);
             modelBuilder.Entity<Sensors>().HasMany(M => M.Sensors_Acties).WithOne(O => O.Sensors).HasForeignKey(F => F.Sensor_Id);
+          
         }
 
     }
