@@ -32,6 +32,8 @@ namespace Limbo_Seeing.Views
                 this.Show();
                 this.Email_Textbox.Text = "";
                 this.Password_Texbox.Text = "";
+
+                
             }
             else
             {
@@ -60,6 +62,11 @@ namespace Limbo_Seeing.Views
         }
 
         private void StartBase_tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

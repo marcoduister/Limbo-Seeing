@@ -15,11 +15,11 @@ namespace Limbo_Seeing.BUS
 
         public ICollection<Activiteit> GetActiviteitens()
         {
-            return DBContext.Activiteiten.AsNoTracking().ToList();
+            return DBContext.Activiteiten.Include(e=>e.Reseverings).AsNoTracking().ToList();
         }
         public ICollection<Activiteit> GetAllActiviteitenByUserID()
         {
-            return DBContext.Activiteiten.AsNoTracking().Where(W => W.Gebruiker_Id == new Guid("9245fe4a-d402-451c-b9ed-9c1a04247482")).ToList();
+            return DBContext.Activiteiten.AsNoTracking().Where(W => W.Gebruiker_Id == new Guid(Properties.Settings.Default.UserId)).ToList();
             //Alert het hier bovendstaande GebruikerId moet uit Settings gehaald worden
         }
         public Activiteit GetActiviteitbyGuid(Guid Id)
@@ -30,7 +30,7 @@ namespace Limbo_Seeing.BUS
         {
             try
             {
-                activiteit.Gebruiker_Id = new Guid("9245fe4a-d402-451c-b9ed-9c1a04247482");
+                activiteit.Gebruiker_Id = new Guid(Properties.Settings.Default.UserId);
                 //Alert het hier bovendstaande GebruikerId moet uit Settings gehaald worden
                 DBContext.Activiteiten.Add(activiteit);
                 DBContext.SaveChanges();
