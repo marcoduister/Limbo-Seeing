@@ -20,7 +20,8 @@ namespace Limbo_Seeing.Views
     public partial class MainBase : Form
     {
         private GebruikerController _GebruikerController = new GebruikerController();
-        
+        private SensorController _SensorController = new SensorController();
+
         public MainBase()
         {
             InitializeComponent();
@@ -54,21 +55,17 @@ namespace Limbo_Seeing.Views
         {
             gMapControl.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
-            //gMapControl.Position = new GMap.NET.PointLatLng(50.864278, 5.831776);
-            
-            gMapControl.Position = new GMap.NET.PointLatLng(-25.969562, 32.585789);
+            gMapControl.Position = new GMap.NET.PointLatLng(50.864278, 5.831776);
             gMapControl.ShowCenter = false;
 
 
             //GMapOverlay markersOverlay = new GMapOverlay("markers");
-
             //GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(-25.969562, 32.585789),
-            //  GMarkerGoogleType.green);
-
+            //GMarkerGoogleType.green);
             //markersOverlay.Markers.Add(marker);
             //gMapControl.Overlays.Add(markersOverlay);
 
-            GMapOverlay polyOverlay = new GMapOverlay("polygons");
+            //GMapOverlay polyOverlay = new GMapOverlay("polygons");
             //List<PointLatLng> points = new List<PointLatLng>();
             //points.Add(new PointLatLng(-25.969562, 32.585789));
             //points.Add(new PointLatLng(-25.966205, 32.588171));
@@ -79,30 +76,12 @@ namespace Limbo_Seeing.Views
             //polygon.Stroke = new Pen(Color.Red, 1);
             //gMapControl.Overlays.Add(polyOverlay);
             //polyOverlay.Polygons.Add(polygon);
-
-            PointLatLng point = new PointLatLng(-25.969562, 32.585789);
-            double radius = 0.001;
-            int segments = 100;
-
-            List<PointLatLng> gpollist = new List<PointLatLng>();
-
-            double seg = Math.PI * 2 / segments;
-
-            for (int i = 0; i < segments; i++)
+            foreach (var item in _SensorController.GetAllSensorData())
             {
-                double theta = seg * i;
-                double a = point.Lat + Math.Cos(theta) * radius;
-                double b = point.Lng + Math.Sin(theta) * radius;
-
-                PointLatLng gpoi = new PointLatLng(a, b);
-
-                gpollist.Add(gpoi);
+                GMapOverlay polyOverlay = new GMapOverlay("polygons");
+                gMapControl.Overlays.Add(polyOverlay);
+                polyOverlay.Polygons.Add(_SensorController.GenerateRadius(item.Locatie));
             }
-            GMapPolygon gpol = new GMapPolygon(gpollist, "pol");
-            gpol.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));
-            gpol.Stroke = new Pen(Color.Red, 1);
-            gMapControl.Overlays.Add(polyOverlay);
-            polyOverlay.Polygons.Add(gpol);
         }
     }
 }
