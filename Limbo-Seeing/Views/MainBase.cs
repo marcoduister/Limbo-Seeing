@@ -58,12 +58,12 @@ namespace Limbo_Seeing.Views
         {
             if (Properties.Settings.Default.PushMelding == false)
             {
-                //Properties.Settings.Default["UserRol"] = true;
+                Properties.Settings.Default["PushMelding"] = true;
                 MessageBox.Show("Push meldingen aan gezet");
             }
             else
             {
-               //Properties.Settings.Default["UserRol"] = false;
+                Properties.Settings.Default["PushMelding"] = false;
                 MessageBox.Show("Push meldingen uit gezet");
             }
          }
