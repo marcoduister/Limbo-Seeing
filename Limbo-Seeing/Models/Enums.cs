@@ -11,7 +11,7 @@ namespace Limbo_Seeing.Models
         public enum Rolen
         {
             Gebruiker,
-            ExtendGebruiker,
+            ActiviteitenManager,
             Beheerder
         }
         public enum Geslachten

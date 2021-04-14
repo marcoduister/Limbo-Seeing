@@ -45,7 +45,7 @@ namespace Limbo_Seeing.BUS
             }
         }
 
-        internal bool Delete(Guid resevering_id)
+        public bool Delete(Guid resevering_id)
         {
             try
             {
