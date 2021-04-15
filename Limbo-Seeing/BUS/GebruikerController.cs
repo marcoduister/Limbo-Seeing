@@ -146,5 +146,10 @@ namespace Limbo_Seeing.BUS
         {
             return DBContext.Gebruikers.First(e => e.Id == UserId);
         }
+
+        internal ICollection<Gebruiker> GetAllUsers()
+        {
+            return DBContext.Gebruikers.ToList();
+        }
     }
 }

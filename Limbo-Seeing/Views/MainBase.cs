@@ -94,5 +94,12 @@ namespace Limbo_Seeing.Views
                 Activteiten_datagrid.Rows.Add(row);
             }
         }
+
+        private void AllUsers_Click(object sender, EventArgs e)
+        {
+            AllUsers AllUsersForm = new AllUsers();
+            AllUsersForm.ShowDialog();
+            AllUsersForm.Dispose();
+        }
     }
 }

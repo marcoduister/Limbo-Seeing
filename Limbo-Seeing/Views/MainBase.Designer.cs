@@ -38,10 +38,11 @@ namespace Limbo_Seeing.Views
             this.gMapControl = new GMap.NET.WindowsForms.GMapControl();
             this.label2 = new System.Windows.Forms.Label();
             this.Activteiten_datagrid = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.Naam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Locatie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Drukte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AllUsers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Activteiten_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,16 +168,6 @@ namespace Limbo_Seeing.Views
             this.Activteiten_datagrid.Size = new System.Drawing.Size(277, 234);
             this.Activteiten_datagrid.TabIndex = 11;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(773, 287);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Vandaag tedoen in de stad";
-            // 
             // Naam
             // 
             this.Naam.HeaderText = "Naam";
@@ -201,11 +192,33 @@ namespace Limbo_Seeing.Views
             this.Drukte.ReadOnly = true;
             this.Drukte.Width = 125;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(773, 287);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Vandaag tedoen in de stad";
+            // 
+            // AllUsers
+            // 
+            this.AllUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.AllUsers.Location = new System.Drawing.Point(865, 73);
+            this.AllUsers.Name = "AllUsers";
+            this.AllUsers.Size = new System.Drawing.Size(189, 54);
+            this.AllUsers.TabIndex = 13;
+            this.AllUsers.Text = "Gebruikers aanpassen";
+            this.AllUsers.UseVisualStyleBackColor = true;
+            this.AllUsers.Click += new System.EventHandler(this.AllUsers_Click);
+            // 
             // MainBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 593);
+            this.Controls.Add(this.AllUsers);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Activteiten_datagrid);
             this.Controls.Add(this.PushMelding);
@@ -240,5 +253,6 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn Naam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Locatie;
         private System.Windows.Forms.DataGridViewTextBoxColumn Drukte;
+        private System.Windows.Forms.Button AllUsers;
     }
 }
