@@ -35,7 +35,7 @@ namespace Limbo_Seeing.Views
 
         private void Activiteiten_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.UserRol != (int)Enums.Rolen.Beheerder || Properties.Settings.Default.UserRol != (int)Enums.Rolen.ActiviteitenManager)
+            if (Properties.Settings.Default.UserRol == (int)Enums.Rolen.Gebruiker)
             {
                 btn_beheer.Enabled = false;
                 btn_beheer.Visible = false;
