@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Limbo_Seeing.BUS
 {
@@ -150,6 +151,21 @@ namespace Limbo_Seeing.BUS
         internal ICollection<Gebruiker> GetAllUsers()
         {
             return DBContext.Gebruikers.ToList();
+        }
+        internal void DeleteUsers(Guid id)
+        {
+            DBContext.Remove(DBContext.Reseverings.First(e => e.Gebruiker_Id == id));
+            var activiteiten = DBContext.Activiteiten.Where(e => e.Gebruiker_Id == id).ToList();
+            foreach (var item in activiteiten)
+            {
+                if (item.Gebruiker_Id == id)
+                {
+                    DBContext.Remove(DBContext.Reseverings.First(e => e.Activiteit_Id == item.Id));
+                }
+            }
+            DBContext.RemoveRange(DBContext.Activiteiten.Where(e => e.Gebruiker_Id == id).ToList());
+            DBContext.Remove(DBContext.Gebruikers.First(F => F.Id == id));
+            DBContext.SaveChanges();
         }
     }
 }

@@ -26,6 +26,13 @@ namespace Limbo_Seeing.Views
         public MainBase()
         {
             InitializeComponent();
+
+            if (Properties.Settings.Default.UserRol == (int)Enums.Rolen.Gebruiker)
+            {
+                AllUsers.Enabled = false;
+                AllUsers.Visible = false;
+                AllUsers.Visible = false;
+            }
         }
 
         private void btn_uitloggen_Click(object sender, EventArgs e)

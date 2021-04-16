@@ -66,5 +66,10 @@ namespace Limbo_Seeing.Views
         {
             MessageBox.Show(gebruikerController.Update(NewEmail.Text, NewName.Text, NewLastName.Text, NewBirthDate.Value));
         }
+
+        private void DeleteUser_Click(object sender, EventArgs e)
+        {
+            gebruikerController.DeleteUsers(UserId);
+        }
     }
 }

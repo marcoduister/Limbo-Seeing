@@ -43,6 +43,7 @@ namespace Limbo_Seeing.Views
             this.NewSex = new System.Windows.Forms.ComboBox();
             this.NewRol = new System.Windows.Forms.ComboBox();
             this.SaveNewData = new System.Windows.Forms.Button();
+            this.DeleteUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@ namespace Limbo_Seeing.Views
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 36);
+            this.label1.Size = new System.Drawing.Size(222, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Account gegevens";
             // 
@@ -170,11 +171,23 @@ namespace Limbo_Seeing.Views
             this.SaveNewData.UseVisualStyleBackColor = true;
             this.SaveNewData.Click += new System.EventHandler(this.SaveNewData_Click);
             // 
+            // DeleteUser
+            // 
+            this.DeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.DeleteUser.Location = new System.Drawing.Point(12, 400);
+            this.DeleteUser.Name = "DeleteUser";
+            this.DeleteUser.Size = new System.Drawing.Size(188, 38);
+            this.DeleteUser.TabIndex = 14;
+            this.DeleteUser.Text = "Delete";
+            this.DeleteUser.UseVisualStyleBackColor = true;
+            this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
+            // 
             // EditAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteUser);
             this.Controls.Add(this.SaveNewData);
             this.Controls.Add(this.NewRol);
             this.Controls.Add(this.NewSex);
@@ -212,5 +225,6 @@ namespace Limbo_Seeing.Views
         private System.Windows.Forms.ComboBox NewSex;
         private System.Windows.Forms.ComboBox NewRol;
         private System.Windows.Forms.Button SaveNewData;
+        private System.Windows.Forms.Button DeleteUser;
     }
 }
