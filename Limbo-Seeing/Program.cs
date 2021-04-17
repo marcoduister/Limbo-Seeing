@@ -14,17 +14,15 @@ namespace Limbo_Seeing
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static DataSeeder seeder = new DataSeeder();
+        static DataSeeder seed = new DataSeeder();
         [STAThread]
         static void Main()
         {
-            seeder.Seeder();
+            seed.Seeder();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartBase());
-
-            
         }
     }
 }

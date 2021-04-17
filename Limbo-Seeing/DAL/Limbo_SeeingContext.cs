@@ -18,7 +18,7 @@ namespace Limbo_Seeing.DAL
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-                    => options.UseSqlServer("server=.;database=Limbro_Seeing_DEV;trusted_connection=true;");
+                    => options.UseSqlServer("server=.;database=Limbo_Seeing_DEV;trusted_connection=true;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

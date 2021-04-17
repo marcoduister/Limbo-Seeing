@@ -13,6 +13,24 @@ namespace Limbo_Seeing.DAL
         Limbo_SeeingContext DBContext = new Limbo_SeeingContext();
         public void Seeder()
         {
+            if (!DBContext.Gebruikers.Any())
+            {
+                DBContext.Gebruikers.Add(new Gebruiker { Id = new Guid("f123873f-1278-49bb-acbb-6c0872ad52a9"), Voornaam = "Marco", Achternaam = "Duister", Email = "marco@zuyd.nl", Wachtwoord = "Qwerty1234", Geslacht = Enums.Geslachten.Man, Rol = Enums.Rolen.Beheerder, Geboortendatum = DateTime.Now, CreatedOn = DateTime.Now, UpdatedOn = DateTime.Now, UserActive = false }) ;
+                DBContext.Gebruikers.Add(new Gebruiker { Id = new Guid("258484ab-4779-4894-820b-d62a3a8dda77"), Voornaam = "Julean", Achternaam = "Hommel", Email = "julean@zuyd.nl", Wachtwoord = "Qwerty1234", Geslacht = Enums.Geslachten.Man, Rol = Enums.Rolen.ActiviteitenManager, Geboortendatum = DateTime.Now, CreatedOn = DateTime.Now, UpdatedOn = DateTime.Now, UserActive = false });
+                DBContext.Gebruikers.Add(new Gebruiker { Id = new Guid("dbcb68de-6442-487b-8868-b3075347af7c"), Voornaam = "Stan", Achternaam = "Kikken", Email = "stan@zuyd.nl", Wachtwoord = "Qwerty1234", Geslacht = Enums.Geslachten.Man, Rol = Enums.Rolen.Gebruiker, Geboortendatum = DateTime.Now, CreatedOn = DateTime.Now, UpdatedOn = DateTime.Now, UserActive = false });
+                DBContext.SaveChanges();
+            }
+            if (!DBContext.Activiteiten.Any())
+            {
+                DBContext.Activiteiten.Add(new Activiteit { Id = new Guid("95a43da6-e414-42bd-aaab-471c51240374"), Naam ="pinkpop", Adress = "Megaland, 6372 XC Landgraaf",  Tijdslot_grote =30, Aantal =20, Start_Activiteit = DateTime.ParseExact("2021-05-08 10:00:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture), Eind_Activiteit = DateTime.ParseExact("2021-05-08 20:30:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture), Gebruiker_Id = new Guid("258484ab-4779-4894-820b-d62a3a8dda77") });
+                DBContext.SaveChanges();
+            }
+            if (!DBContext.Reseverings.Any())
+            {
+                DBContext.Reseverings.Add(new Resevering { Id = new Guid("a86cb436-0b98-4b91-af2c-d12aa8e55d85"), Tijdslot_Start = DateTime.ParseExact("2021-05-08 10:00:00,000", "yyyy-MM-dd HH:mm:ss,fff",System.Globalization.CultureInfo.InvariantCulture), Tijdslot_Eind = DateTime.ParseExact("2021-05-08 10:30:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture), Gebruiker_Id = new Guid("dbcb68de-6442-487b-8868-b3075347af7c"), Activiteit_Id = new Guid("95a43da6-e414-42bd-aaab-471c51240374") });
+                DBContext.Reseverings.Add(new Resevering { Id = new Guid("a262b774-532c-4368-8b46-a4cee6007731"), Tijdslot_Start = DateTime.ParseExact("2021-05-08 11:00:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture),Tijdslot_Eind = DateTime.ParseExact("2021-05-08 11:30:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture), Gebruiker_Id = new Guid("f123873f-1278-49bb-acbb-6c0872ad52a9"), Activiteit_Id = new Guid("95a43da6-e414-42bd-aaab-471c51240374") });
+                DBContext.SaveChanges();
+            }
             if (!DBContext.Sensoren.Any())
             {
                 List<Sensors> sensors = new List<Sensors>();
